@@ -1,1 +1,1483 @@
+<!DOCTYPE html>
+<html lang="hi-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Open Source — Complete SWAYAM Exam Guide | All Weeks</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap');
+:root{--bg:#0d0c18;--surf:#181727;--card:#201f36;--card2:#252442;--a1:#ff6b35;--a2:#f7c59f;--a3:#2ec4b6;--a4:#e71d36;--a5:#a8dadc;--a6:#9b5de5;--a7:#f15bb5;--a8:#fee440;--txt:#fffffe;--muted:#a7a9be;--ok:#06d6a0;--bad:#ef233c;--hi:#ffd166;--bdr:rgba(255,255,255,0.07);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Hind',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;font-size:16px;}
 
+/* HERO */
+.hero{background:linear-gradient(140deg,#1a0533 0%,#0d0c18 45%,#001827 100%);padding:70px 30px 50px;text-align:center;border-bottom:2px solid var(--a1);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(255,107,53,.14) 0%,transparent 55%),radial-gradient(ellipse at 75% 40%,rgba(46,196,182,.1) 0%,transparent 55%);}
+.hero-badge{display:inline-block;background:var(--a1);color:#fff;font-family:'Baloo 2',cursive;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:18px;}
+.hero h1{font-family:'Baloo 2',cursive;font-size:clamp(2rem,5vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:10px;position:relative;}
+.hero h1 span{color:var(--a1);}
+.hero-sub{color:var(--muted);font-size:1rem;margin-bottom:28px;position:relative;}
+.hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;}
+.hp{background:rgba(255,255,255,.05);border:1px solid var(--bdr);border-radius:50px;padding:7px 18px;font-size:12px;color:var(--a5);font-weight:600;}
+
+/* STICKY NAV */
+.snav{position:sticky;top:0;background:rgba(13,12,24,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);padding:0;display:flex;align-items:stretch;z-index:200;overflow-x:auto;scrollbar-width:none;}
+.snav::-webkit-scrollbar{display:none;}
+.snav a{color:var(--muted);text-decoration:none;font-family:'Baloo 2',cursive;font-size:13px;font-weight:600;padding:14px 20px;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.snav a:hover{color:var(--txt);background:rgba(255,255,255,.04);}
+.snav a.active{color:var(--a1);border-bottom-color:var(--a1);}
+
+/* CONTAINER */
+.wrap{max-width:950px;margin:0 auto;padding:0 20px 80px;}
+
+/* WEEK SECTION */
+.week-section{padding-top:50px;}
+.week-hdr{border-radius:18px;padding:28px 32px;margin:10px 0 35px;display:flex;align-items:center;gap:20px;}
+.wk1-hdr{background:linear-gradient(135deg,var(--a1) 0%,#c94b1e 100%);}
+.wk2-hdr{background:linear-gradient(135deg,#1a6b7a 0%,#0d4a54 100%);border:1px solid rgba(46,196,182,.3);}
+.wk3-hdr{background:linear-gradient(135deg,#3d1b6b 0%,#1e0d38 100%);border:1px solid rgba(155,93,229,.3);}
+.wk4-hdr{background:linear-gradient(135deg,#6b1b1b 0%,#3a0d0d 100%);border:1px solid rgba(231,29,54,.3);}
+.wnum{background:rgba(0,0,0,.3);border-radius:12px;padding:10px 18px;font-family:'Baloo 2',cursive;font-size:1.9rem;font-weight:800;color:#fff;white-space:nowrap;}
+.week-hdr-text h2{font-family:'Baloo 2',cursive;font-size:clamp(1.3rem,3vw,1.9rem);color:#fff;font-weight:700;}
+.week-hdr-text p{color:rgba(255,255,255,.75);font-size:.88rem;margin-top:5px;}
+
+/* TOPIC */
+.topic{margin:38px 0;scroll-margin-top:60px;}
+.topic-ttl{font-family:'Baloo 2',cursive;font-size:1.35rem;font-weight:700;color:var(--a3);border-bottom:2px solid var(--a3);padding-bottom:7px;margin-bottom:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.topic-ttl.purple{color:var(--a6);border-bottom-color:var(--a6);}
+.topic-ttl.pink{color:var(--a7);border-bottom-color:var(--a7);}
+.topic-ttl.red{color:var(--a4);border-bottom-color:var(--a4);}
+.topic-ttl.orange{color:var(--a1);border-bottom-color:var(--a1);}
+
+/* BADGES */
+.exam-tag{display:inline-block;background:var(--hi);color:#0d0c18;font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:4px;text-transform:uppercase;}
+.imp-tag{display:inline-block;background:var(--a4);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:4px;text-transform:uppercase;}
+.new-tag{display:inline-block;background:var(--a6);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:4px;text-transform:uppercase;}
+
+/* EXPLANATION */
+.expl{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:24px;margin-bottom:16px;}
+.expl p{margin-bottom:12px;color:#d0d1e8;font-size:.95rem;}
+.expl p:last-child{margin-bottom:0;}
+
+/* HINGLISH BOX */
+.hb{background:linear-gradient(135deg,rgba(46,196,182,.09),rgba(46,196,182,.03));border:1px solid rgba(46,196,182,.25);border-left:4px solid var(--a3);border-radius:0 12px 12px 0;padding:18px 22px;margin:16px 0;}
+.hb::before{content:'🇮🇳 Hinglish Explanation';display:block;font-family:'Baloo 2',cursive;font-size:.75rem;font-weight:700;color:var(--a3);text-transform:uppercase;letter-spacing:2px;margin-bottom:9px;}
+.hb p{color:#c5f0ed;margin-bottom:9px;font-size:.93rem;}
+.hb p:last-child{margin-bottom:0;}
+.hb.purple{background:linear-gradient(135deg,rgba(155,93,229,.09),rgba(155,93,229,.03));border:1px solid rgba(155,93,229,.25);border-left:4px solid var(--a6);}
+.hb.purple::before{color:var(--a6);}
+.hb.purple p{color:#d4b8f5;}
+
+/* ANALOGY */
+.analogy{background:rgba(247,197,159,.07);border:1px dashed rgba(247,197,159,.28);border-radius:12px;padding:16px 20px;margin:14px 0;font-size:.92rem;color:var(--a2);}
+.analogy::before{content:'💡 Real-life Example:';display:block;font-weight:700;margin-bottom:7px;font-size:.82rem;letter-spacing:1px;}
+
+/* KEY POINTS */
+.kp{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:20px 24px;margin:18px 0;}
+.kp-ttl{font-family:'Baloo 2',cursive;font-size:.95rem;color:var(--hi);margin-bottom:12px;display:flex;align-items:center;gap:8px;font-weight:700;}
+.kp ul{list-style:none;padding:0;}
+.kp li{padding:6px 0 6px 26px;position:relative;color:#d0d1e8;border-bottom:1px solid var(--bdr);font-size:.9rem;}
+.kp li:last-child{border-bottom:none;}
+.kp li::before{content:'▸';position:absolute;left:8px;color:var(--hi);}
+
+/* DEFINITION */
+.def{background:rgba(231,29,54,.07);border:1px solid rgba(231,29,54,.22);border-radius:10px;padding:14px 18px;margin:14px 0;}
+.def-term{font-family:'Baloo 2',cursive;font-size:.95rem;color:var(--a4);font-weight:700;margin-bottom:5px;}
+.def p{color:#e0a0a8;font-size:.9rem;}
+
+/* TOOL CARD GRID */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin:20px 0;}
+.tool-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;}
+.tool-card.teal{border-top:3px solid var(--a3);}
+.tool-card.orange{border-top:3px solid var(--a1);}
+.tool-card.purple{border-top:3px solid var(--a6);}
+.tool-card.yellow{border-top:3px solid var(--hi);}
+.tool-card.pink{border-top:3px solid var(--a7);}
+.tool-card.red{border-top:3px solid var(--a4);}
+.tool-card h4{font-family:'Baloo 2',cursive;font-size:1rem;color:var(--txt);margin-bottom:8px;}
+.tool-card .emoji{font-size:1.5rem;margin-bottom:8px;display:block;}
+.tool-card p{font-size:.82rem;color:var(--muted);line-height:1.55;}
+.tool-card ul{padding-left:16px;margin-top:8px;}
+.tool-card li{font-size:.8rem;color:var(--muted);margin-bottom:3px;}
+
+/* TABLE */
+.ctbl{width:100%;border-collapse:collapse;margin:18px 0;font-size:.86rem;border-radius:12px;overflow:hidden;}
+.ctbl th{background:var(--a1);color:#fff;padding:11px 14px;text-align:left;font-family:'Baloo 2',cursive;font-weight:700;}
+.ctbl.purple th{background:var(--a6);}
+.ctbl.teal th{background:#1a6b7a;}
+.ctbl td{padding:10px 14px;border-bottom:1px solid var(--bdr);color:#c8c9db;background:var(--card);}
+.ctbl tr:last-child td{border-bottom:none;}
+.ctbl tr:hover td{background:rgba(255,107,53,.05);}
+
+/* SPECTRUM BAR */
+.spec{display:flex;align-items:stretch;gap:2px;margin:18px 0;border-radius:12px;overflow:hidden;}
+.sp-item{flex:1;padding:14px 8px;text-align:center;font-size:.75rem;font-weight:600;line-height:1.4;}
+.sp1{background:#1b3a4b;color:#7ecbde;}
+.sp2{background:#1d4023;color:#7ee09a;}
+.sp3{background:#3b2a00;color:#ffc73c;}
+.sp4{background:#3b1010;color:#ff8585;}
+
+/* WOTD */
+.wotd{background:linear-gradient(135deg,rgba(255,209,102,.1),rgba(255,209,102,.04));border:1px solid rgba(255,209,102,.22);border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:14px;align-items:flex-start;}
+.wotd-ico{font-size:1.5rem;}
+.wotd-word{font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;color:var(--hi);}
+.wotd-meaning{font-size:.85rem;color:#c8a843;margin-top:3px;}
+
+/* NOTE */
+.note{background:rgba(168,218,220,.06);border:1px solid rgba(168,218,220,.18);border-radius:10px;padding:12px 16px;font-size:.87rem;color:var(--a5);margin:14px 0;}
+.note strong{color:#fff;}
+
+/* WARN */
+.warn{background:rgba(231,29,54,.07);border:1px solid rgba(231,29,54,.2);border-radius:10px;padding:12px 16px;font-size:.87rem;color:#e8a0a8;margin:14px 0;}
+.warn strong{color:var(--a4);}
+
+/* MCQ SECTION */
+.mcq-sec{margin:32px 0;background:var(--card);border:1px solid var(--bdr);border-top:3px solid var(--a1);border-radius:16px;padding:26px;}
+.mcq-sec.purple{border-top-color:var(--a6);}
+.mcq-sec.teal{border-top-color:var(--a3);}
+.mcq-sec.red{border-top-color:var(--a4);}
+.mcq-sec-ttl{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:800;color:var(--a1);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.mcq-sec.purple .mcq-sec-ttl{color:var(--a6);}
+.mcq-sec.teal .mcq-sec-ttl{color:var(--a3);}
+.mcq-sec.red .mcq-sec-ttl{color:var(--a4);}
+.mcq-item{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:20px;margin-bottom:16px;transition:border-color .2s;}
+.mcq-item:hover{border-color:rgba(255,107,53,.25);}
+.mcq-item:last-child{margin-bottom:0;}
+.mcq-n{display:inline-block;background:var(--a1);color:#fff;font-family:'Baloo 2',cursive;font-weight:700;font-size:.78rem;padding:3px 11px;border-radius:20px;margin-bottom:10px;}
+.mcq-sec.purple .mcq-n{background:var(--a6);}
+.mcq-sec.teal .mcq-n{background:#1a6b7a;}
+.mcq-q{font-size:.95rem;color:var(--txt);font-weight:500;line-height:1.6;margin-bottom:14px;}
+.opts{list-style:none;padding:0;margin-bottom:0;}
+.opts li{padding:8px 13px;margin:5px 0;border-radius:8px;font-size:.88rem;color:#b0b2c8;border:1px solid var(--bdr);transition:all .15s;}
+.opts li.correct{background:rgba(6,214,160,.1);border-color:var(--ok);color:#9ef0d8;font-weight:600;}
+.opts li.correct::before{content:'✓ ';color:var(--ok);}
+.mcq-ans{margin-top:14px;background:rgba(6,214,160,.06);border:1px solid rgba(6,214,160,.18);border-radius:10px;padding:14px 16px;display:none;}
+.mcq-item.revealed .mcq-ans{display:block;}
+.ans-lbl{font-family:'Baloo 2',cursive;font-size:.8rem;color:var(--ok);font-weight:700;margin-bottom:7px;text-transform:uppercase;letter-spacing:1px;}
+.mcq-ans p{font-size:.86rem;color:#9ef0d8;line-height:1.6;}
+.reveal-btn{background:transparent;border:1px solid var(--a3);color:var(--a3);font-family:'Baloo 2',cursive;font-size:.82rem;font-weight:600;padding:6px 16px;border-radius:20px;cursor:pointer;margin-top:12px;transition:all .2s;}
+.reveal-btn:hover{background:var(--a3);color:var(--bg);}
+.mcq-item.revealed .reveal-btn{display:none;}
+
+/* CHAPTER TEST */
+.ch-test{background:var(--surf);border:2px solid var(--a1);border-radius:18px;padding:28px;margin:30px 0;}
+.ch-test.purple{border-color:var(--a6);}
+.ch-test.teal{border-color:var(--a3);}
+.ch-test.red{border-color:var(--a4);}
+.test-hdr{font-family:'Baloo 2',cursive;font-size:1.45rem;font-weight:800;color:var(--a1);margin-bottom:5px;}
+.ch-test.purple .test-hdr{color:var(--a6);}
+.ch-test.teal .test-hdr{color:var(--a3);}
+.ch-test.red .test-hdr{color:var(--a4);}
+.test-sub{color:var(--muted);font-size:.88rem;margin-bottom:22px;}
+
+/* CHAPTER SUMMARY */
+.ch-sum{background:linear-gradient(135deg,rgba(46,196,182,.1),rgba(46,196,182,.03));border:1px solid rgba(46,196,182,.2);border-radius:16px;padding:28px;margin:36px 0;}
+.ch-sum.purple{background:linear-gradient(135deg,rgba(155,93,229,.1),rgba(155,93,229,.03));border-color:rgba(155,93,229,.2);}
+.ch-sum.red{background:linear-gradient(135deg,rgba(231,29,54,.08),rgba(231,29,54,.02));border-color:rgba(231,29,54,.2);}
+.sum-ttl{font-family:'Baloo 2',cursive;font-size:1.25rem;color:var(--a3);font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.ch-sum.purple .sum-ttl{color:var(--a6);}
+.ch-sum.red .sum-ttl{color:var(--a4);}
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px;margin-top:14px;}
+.sum-card{background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:10px;padding:13px;}
+.sum-card strong{color:var(--a5);display:block;margin-bottom:3px;font-size:.88rem;}
+.sum-card{font-size:.83rem;color:var(--muted);}
+
+/* DIVIDER */
+hr.div{border:none;border-top:1px solid var(--bdr);margin:30px 0;}
+
+/* TOC */
+.toc{background:var(--surf);border:1px solid var(--bdr);border-left:4px solid var(--a3);border-radius:12px;padding:26px;margin:40px 0;}
+.toc-ttl{font-family:'Baloo 2',cursive;font-size:1.2rem;color:var(--a3);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.toc-week{margin-bottom:16px;}
+.toc-week-label{font-family:'Baloo 2',cursive;font-size:.9rem;font-weight:700;color:var(--hi);margin-bottom:8px;}
+.toc ol{padding-left:18px;}
+.toc li{margin:6px 0;}
+.toc a{color:var(--a2);text-decoration:none;font-size:.9rem;}
+.toc a:hover{color:var(--a1);}
+
+/* SCALE TABLE */
+.scale-row{display:grid;grid-template-columns:80px 130px 1fr;gap:0;border-radius:12px;overflow:hidden;margin:16px 0;}
+.sr-cell{padding:12px 16px;font-size:.84rem;border-bottom:1px solid var(--bdr);}
+.sr-hdr{background:var(--a6);color:#fff;font-family:'Baloo 2',cursive;font-weight:700;}
+.sr-body{background:var(--card);color:#c8c9db;}
+.sr-l{border-right:1px solid var(--bdr);}
+
+/* RESPONSIVE */
+@media(max-width:600px){.week-hdr{flex-direction:column;gap:12px;}.spec{flex-direction:column;}.tool-grid{grid-template-columns:1fr;}.sum-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">SWAYAM · NPTEL · NITTTR Chandigarh</div>
+  <h1>AI & <span>Open Source</span><br>Complete Exam Preparation Guide</h1>
+  <p class="hero-sub">M. Dutta & M. Sood | Beginner to Exam-Ready | All Weeks Covered</p>
+  <div class="hero-pills">
+    <span class="hp">📖 All 4 Weeks</span>
+    <span class="hp">🇮🇳 Hinglish Explanations</span>
+    <span class="hp">📝 100+ MCQs</span>
+    <span class="hp">🎯 Exam-Oriented</span>
+    <span class="hp">⚡ Click to Reveal Answers</span>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="snav">
+  <a href="#week1" id="nav-w1" class="active">🧠 Week 1: AI Fundamentals</a>
+  <a href="#week2" id="nav-w2">🎓 Week 2: AI in Education</a>
+  <a href="#week3" id="nav-w3">🛠️ Week 3: Open Source Tools</a>
+  <a href="#week4" id="nav-w4">⚖️ Week 4: Ethics & Policy</a>
+</nav>
+
+<div class="wrap">
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-ttl">📋 Complete Table of Contents</div>
+  <div class="toc-week">
+    <div class="toc-week-label">🧠 WEEK 1 — AI Fundamentals</div>
+    <ol>
+      <li><a href="#w1t1">Introduction to AI — Definition, Turing Test, McCarthy</a></li>
+      <li><a href="#w1t2">Types of AI — Narrow, General, Superintelligent</a></li>
+      <li><a href="#w1t3">AI Spectrum — Automated → Autonomous (4 Levels)</a></li>
+      <li><a href="#w1t4">Specialized Domains — Generative AI & Conversational AI</a></li>
+      <li><a href="#w1t5">AI Techniques — ML, DL, NLP, Computer Vision, Expert Systems</a></li>
+      <li><a href="#w1t6">History & Evolution — Turing, Winters, Revival, ChatGPT</a></li>
+      <li><a href="#w1t7">AI in Everyday Life & Major Sectors</a></li>
+      <li><a href="#w1t8">AI for Social Good & SDGs</a></li>
+      <li><a href="#w1test">📝 Week 1 Chapter Test (15 MCQs)</a></li>
+    </ol>
+  </div>
+  <div class="toc-week">
+    <div class="toc-week-label">🎓 WEEK 2 — AI in Education & Pedagogy</div>
+    <ol>
+      <li><a href="#w2t1">Challenges of Conventional Education</a></li>
+      <li><a href="#w2t2">AI Applications in Education — 6 Key Areas</a></li>
+      <li><a href="#w2t3">Pedagogical Approaches — 6 Types (2C-2I-1R+B)</a></li>
+      <li><a href="#w2t4">Teacher-Centric vs Student-Centric Education</a></li>
+      <li><a href="#w2t5">GenAI Use Cases in Technical Education</a></li>
+      <li><a href="#w2test">📝 Week 2 Chapter Test (12 MCQs)</a></li>
+    </ol>
+  </div>
+  <div class="toc-week">
+    <div class="toc-week-label">🛠️ WEEK 3 — Open Source Tools</div>
+    <ol>
+      <li><a href="#w3t1">Draw.io — Flowchart & Diagram Tool</a></li>
+      <li><a href="#w3t2">Microsoft Whiteboard</a></li>
+      <li><a href="#w3t3">Canvas LMS</a></li>
+      <li><a href="#w3t4">Jupyter Notebook</a></li>
+      <li><a href="#w3t5">Orange Data Mining</a></li>
+      <li><a href="#w3t6">Quizizz & Mentimeter</a></li>
+      <li><a href="#w3t7">Zotero, Connected Papers, SciSpace, Research Rabbit, Explainpaper</a></li>
+      <li><a href="#w3t8">Scilab Xcos</a></li>
+      <li><a href="#w3test">📝 Week 3 Chapter Test (12 MCQs)</a></li>
+    </ol>
+  </div>
+  <div class="toc-week">
+    <div class="toc-week-label">⚖️ WEEK 4 — Ethics, Data Protection & AI Policy</div>
+    <ol>
+      <li><a href="#w4t1">Data Protection — DPDP Act, Data Principal, Data Fiduciary</a></li>
+      <li><a href="#w4t2">Data Inventory & DPIA</a></li>
+      <li><a href="#w4t3">Ethical & Responsible Use of GenAI</a></li>
+      <li><a href="#w4t4">Faculty Readiness for AI Adoption</a></li>
+      <li><a href="#w4t5">Building an Institutional AI Policy</a></li>
+      <li><a href="#w4t6">Research Ethics in the AI Era</a></li>
+      <li><a href="#w4test">📝 Week 4 Chapter Test (12 MCQs)</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ██████████████████ WEEK 1 ██████████████████ -->
+<div class="week-section" id="week1">
+<div class="week-hdr wk1-hdr">
+  <div class="wnum">W1</div>
+  <div class="week-hdr-text">
+    <h2>WEEK 1: Introduction to Artificial Intelligence</h2>
+    <p>AI ki duniya mein aapka swagat hai! Definitions, types, spectrum, techniques, history, sectors — sab kuch cover.</p>
+  </div>
+</div>
+
+<!-- W1 T1 -->
+<div class="topic" id="w1t1">
+<div class="topic-ttl">🧠 Topic 1: What is Artificial Intelligence? <span class="exam-tag">FOUNDATION</span></div>
+
+<div class="wotd"><div class="wotd-ico">📚</div><div><div class="wotd-word">Word of the Day: "Paradigm" (पैरेडाइम)</div><div class="wotd-meaning">Fundamental model of thinking. "AI represents a paradigm shift" = AI ne thinking ka tarika hi badal diya.</div></div></div>
+
+<div class="expl">
+<p><strong>McCarthy's Definition:</strong> "The science and engineering of making intelligent machines, especially intelligent computer programs."</p>
+<p><strong>Russell & Norvig (1995):</strong> AI = "Study and design of rational agents." Agent = environment ko perceive karo + best action lo.</p>
+<p><strong>Simple Core:</strong> AI = <strong>Data + Algorithms</strong> milke machine ko train karte hain taaki woh khud seekh sake.</p>
+</div>
+
+<div class="hb">
+<p>Socho ek student jisko tum baar baar examples dikhate ho "yeh cat hai, yeh dog hai" — baccha gradually samajh jata hai. <strong>AI bhi aise hi kaam karta hai!</strong> Data dekhta hai, patterns seekhta hai.</p>
+<p>Google Maps traffic analyze karta hai → AI! Netflix shows recommend karta hai → AI! Gmail spam filter karta hai → AI!</p>
+<p><strong>Key Formula:</strong> Traditional Programming = Input + Code = Output | AI = Input + Output (data) → Code (algorithm) seekh leta hai khud!</p>
+</div>
+
+<div class="def"><div class="def-term">📖 AI — Two Perspectives</div><p><strong>(1) Academic Discipline:</strong> Computer science + Math + Cognitive Psychology + Neuroscience + Linguistics + Philosophy | <strong>(2) Practical Technology:</strong> Voice assistants, recommendation systems, autonomous vehicles, healthcare diagnostics</p></div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Term "AI" coined by <strong>John McCarthy in 1956</strong> at Dartmouth Conference</li>
+<li>Turing Test proposed by <strong>Alan Turing in 1950</strong> in paper "Computing Machinery and Intelligence"</li>
+<li>Rational Agent = perceives environment through sensors + acts through actuators for best outcome</li>
+<li>AI = Data + Algorithms | Core components: two — data and algorithms</li>
+<li>AI systems learn & improve without being explicitly re-programmed — yahi difference hai traditional programming se</li>
+<li>AI viewed as (a) Field of Study (b) Practical Technology in Products</li>
+</ul></div>
+
+<div class="mcq-sec">
+<div class="mcq-sec-ttl">📝 Topic 1 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q1</div><div class="mcq-q">The term "Artificial Intelligence" was formally coined by whom and where?</div><ul class="opts"><li>a) Alan Turing, MIT, 1950</li><li class="correct">b) John McCarthy, Dartmouth Conference, 1956</li><li>c) Marvin Minsky, Stanford, 1960</li><li>d) Von Neumann, Princeton, 1948</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>John McCarthy ne 1956 mein Dartmouth Conference mein "AI" term diya. Alan Turing ne 1950 mein Turing Test propose kiya tha — yeh AI test tha, naam nahi diya. Exam mein dono dates alag alag poochhte hain!</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q2</div><div class="mcq-q">Russell and Norvig define a "rational agent" as one that:</div><ul class="opts"><li>a) Perfectly replicates human thought processes</li><li>b) Uses only logic-based symbolic reasoning</li><li class="correct">c) Perceives its environment and acts to achieve the best possible outcome</li><li>d) Requires human supervision for every decision</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Rational agent ko human ki tarah sochna ZARURI NAHI — sirf best possible outcome achieve karna chahiye. Yeh distinction bahut important hai exam mein!</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q3</div><div class="mcq-q">The Turing Test passes when:</div><ul class="opts"><li>a) A computer solves mathematical problems faster than humans</li><li>b) A robot physically imitates human movements</li><li class="correct">c) An interpreter (judge) cannot distinguish between a human and a computer in conversation</li><li>d) A machine translates between two languages accurately</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Turing Test: Interpreter + Human + Computer. Alag alag conversations hoti hain. Agar interpreter guess nahi kar sake ki kaun computer hai → computer passes! 1950 mein propose hua.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W1 T2 -->
+<div class="topic" id="w1t2">
+<div class="topic-ttl orange">🔢 Topic 2: Types of AI — Narrow, General, Superintelligent <span class="exam-tag">VERY FREQUENT</span></div>
+
+<div class="hb">
+<p><strong>Narrow AI (aajkal ka AI):</strong> Sirf ek kaam ke liye. Siri sirf voice commands, Netflix sirf recommendations — baaki kuch nahi kar sakte!</p>
+<p><strong>General AI (abhi sirf theory):</strong> Human jaisi intelligence — chess bhi, cooking bhi, doctor bhi. AGI = Artificial General Intelligence. Abhi achieve nahi hua!</p>
+<p><strong>Superintelligent AI (future fantasy?):</strong> Human se bhi zyada smart! Nick Bostrom ne apni book mein iske baare mein socha hai. Abhi sirf concept hai.</p>
+</div>
+
+<div class="tool-grid">
+<div class="tool-card teal"><span class="emoji">🎯</span><h4>Narrow / Weak AI</h4><p>Task-specific, most real-world AI today, operates within defined constraints.</p><ul><li>Siri, Alexa, Google Assistant</li><li>Netflix / Amazon recommendations</li><li>IBM Deep Blue (chess)</li><li>AlphaZero (games)</li><li>Face recognition systems</li></ul></div>
+<div class="tool-card orange"><span class="emoji">🌐</span><h4>General AI (AGI)</h4><p>Human-like reasoning across ALL domains. Still THEORETICAL — not achieved!</p><ul><li>Reason in multiple contexts</li><li>Abstract thinking & creativity</li><li>Self-awareness potential</li><li>Active research area only</li></ul></div>
+<div class="tool-card red"><span class="emoji">🚀</span><h4>Superintelligent AI (ASI)</h4><p>Surpasses ALL human intelligence. Purely HYPOTHETICAL concept.</p><ul><li>Far exceeds human intellect</li><li>Self-improving systems</li><li>Nick Bostrom discusses this</li><li>Raises existential questions</li></ul></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Narrow AI = "Weak AI" bhi kehte hain | General AI = "Strong AI" bhi kehte hain</li>
+<li>AGI current status = <strong>"Largely theoretical, NOT yet achieved"</strong></li>
+<li>IBM Deep Blue chess = Narrow AI ka classic example</li>
+<li>Nick Bostrom = associated with Superintelligent AI concept</li>
+<li>Narrow → General → Superintelligent = "evolutionary continuum"</li>
+<li>Narrow AI dominates ALL current real-world applications</li>
+</ul></div>
+
+<div class="mcq-sec">
+<div class="mcq-sec-ttl">📝 Topic 2 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q4</div><div class="mcq-q">IBM's Deep Blue, which defeated chess champion Kasparov, is an example of:</div><ul class="opts"><li class="correct">a) Narrow AI</li><li>b) General AI</li><li>c) Superintelligent AI</li><li>d) Autonomous AI</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (a)</div><p>Deep Blue sirf chess khelne ke liye designed tha — Narrow AI! Woh chess ke bahar kuch nahi kar sakta. Narrow AI ka defining feature: ek specific domain mein expert, baaki sab mein zero.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q5</div><div class="mcq-q">What is the CURRENT STATUS of Artificial General Intelligence (AGI)?</div><ul class="opts"><li>a) Achieved and deployed in major tech companies</li><li>b) Partially achieved through ChatGPT</li><li class="correct">c) Largely theoretical and has NOT yet been achieved</li><li>d) Achieved only in classified military projects</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course mein exactly: "General AI remains largely theoretical and has not yet been achieved." ChatGPT bhi Narrow AI hai — sirf language tasks! AGI ke liye research cognitive modeling, neuroscience, deep learning mein chal rahi hai.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q6</div><div class="mcq-q">Which thinker/researcher is MOST associated with Superintelligent AI (ASI) discussions?</div><ul class="opts"><li>a) Alan Turing</li><li>b) John McCarthy</li><li>c) Marvin Minsky</li><li class="correct">d) Nick Bostrom</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d)</div><p>Course specifically: "Currently speculative, existing only as a concept discussed by futurists and AI ethicists such as Nick Bostrom." Bostrom ka famous book "Superintelligence" (2014) ASI risks discuss karta hai.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W1 T3 -->
+<div class="topic" id="w1t3">
+<div class="topic-ttl">📊 Topic 3: AI Spectrum — 4 Levels <span class="exam-tag">EXAM FAVOURITE</span></div>
+
+<div class="hb">
+<p><strong>AI ek ladder ki tarah hai — neeche se upar zyada independent hoti hai!</strong></p>
+<p><strong>Level 1 — Automated:</strong> ATM machine — rules follow karo, wohi karo jo bola gaya, nothing more.</p>
+<p><strong>Level 2 — Assisted:</strong> Doctor ko AI bole "yeh cancer ho sakta hai" — lekin final call doctor ki!</p>
+<p><strong>Level 3 — Augmented:</strong> Human + AI team. Climate forecasting: AI analyze kare, human policy banaye.</p>
+<p><strong>Level 4 — Autonomous:</strong> Self-driving car — khud sab karo, kisi se kuch poochhna nahi!</p>
+</div>
+
+<div class="spec">
+<div class="sp-item sp1">🤖<br><strong>Automated</strong><br>Rule-based<br>No learning<br>Repetitive only</div>
+<div class="sp-item sp2">🤝<br><strong>Assisted</strong><br>Analyzes data<br>Insights only<br>Human decides</div>
+<div class="sp-item sp3">🧩<br><strong>Augmented</strong><br>Human+AI<br>Predictive<br>Strategic</div>
+<div class="sp-item sp4">🚗<br><strong>Autonomous</strong><br>Independent<br>Self-corrects<br>No supervision</div>
+</div>
+
+<table class="ctbl">
+<thead><tr><th>Level</th><th>Defining Feature</th><th>Examples (Course-mentioned)</th><th>Human Role</th></tr></thead>
+<tbody>
+<tr><td><strong>Automated</strong></td><td>Pre-defined rules, NO learning/adaptation</td><td>ATM, invoice processing, basic chatbots, assembly-line robots</td><td>Sets rules only</td></tr>
+<tr><td><strong>Assisted</strong></td><td>Data analysis, provides insights for human decisions</td><td>Social media analytics, BI dashboards, AI-assisted healthcare diagnosis</td><td>Makes final decision</td></tr>
+<tr><td><strong>Augmented</strong></td><td>Predictive models, human-AI collaboration</td><td>Financial risk prediction, climate forecasting, medical decision-support</td><td>Validates & interprets</td></tr>
+<tr><td><strong>Autonomous</strong></td><td>Independent decisions, self-correction, minimal supervision</td><td>Self-driving vehicles, autonomous drones, industrial robots</td><td>Minimal or none</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Order: Automated → Assisted → Augmented → Autonomous (increasing independence)</li>
+<li>Automated = most basic, does NOT learn or adapt beyond programmed capabilities</li>
+<li>Assisted = analyze patterns, present insights (NOT replace human judgment)</li>
+<li>Augmented ≠ Automation → it AMPLIFIES human intelligence (not replaces)</li>
+<li>Autonomous = highest level, real-time decision-making + self-correction</li>
+<li>Autonomous AI raises ethical, legal, safety concerns about accountability</li>
+<li>Social media analytics → Assisted | Climate forecasting → Augmented | Self-driving → Autonomous</li>
+</ul></div>
+
+<div class="mcq-sec">
+<div class="mcq-sec-ttl">📝 Topic 3 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q7</div><div class="mcq-q">A social media analytics tool that identifies consumer sentiment and presents it to human marketers for decisions represents:</div><ul class="opts"><li>a) Automated Intelligence</li><li class="correct">b) Assisted Intelligence</li><li>c) Augmented Intelligence</li><li>d) Autonomous Intelligence</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Assisted = data analyze karna + insights present karna — but HUMAN final decision leta hai. Social media tool sentiment dikhata hai, marketing strategy human banata hai. Augmented hota agar predictive models use ho rahe hote future ke liye strategic decisions mein.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q8</div><div class="mcq-q">What characteristic DISTINGUISHES Automated Intelligence from ALL other three levels?</div><ul class="opts"><li>a) It requires expensive cloud computing</li><li>b) It needs constant human supervision</li><li class="correct">c) It does not learn or adapt beyond its programmed capabilities</li><li>d) It only works in manufacturing environments</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Key distinction: "Does NOT learn or adapt beyond programmed capabilities." Automated = pure rule-based. Assisted, Augmented, Autonomous — teeno mein kuch learning/adaptation hoti hai. Yeh core difference hai exam mein.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W1 T4 -->
+<div class="topic" id="w1t4">
+<div class="topic-ttl">🎨 Topic 4: Specialized Domains — Generative AI & Conversational AI</div>
+
+<div class="hb">
+<p><strong>Generative AI = Naya content BANATA hai.</strong> Blank page pe kuch create karta hai. ChatGPT text likhta hai, DALL-E images banata hai, Suno music create karta hai.</p>
+<p><strong>Conversational AI = Insaan se BAAT karta hai naturally.</strong> Alexa, Siri tumhari baat samajhte hain, context understand karte hain, jawab dete hain.</p>
+<p><strong>Fark:</strong> Generative = NEW content create | Conversational = natural dialogue enable karna</p>
+</div>
+
+<div class="tool-grid">
+<div class="tool-card teal"><span class="emoji">🎭</span><h4>Generative AI</h4><p>Creates new content from vast data patterns. Subset of ML.</p><ul><li><strong>Transformers:</strong> GPT-3, GPT-4 (text)</li><li><strong>GANs:</strong> Images, videos, data</li><li><strong>VAEs:</strong> Diverse outputs</li><li>Challenges: bias, authenticity, ethics</li></ul></div>
+<div class="tool-card orange"><span class="emoji">💬</span><h4>Conversational AI</h4><p>Natural human-like dialogue. Uses NLP + ML + NLU.</p><ul><li><strong>NLP:</strong> Understand language</li><li><strong>ML:</strong> Learn from interactions</li><li><strong>NLU:</strong> Extract intent & meaning</li><li>Alexa, Siri, Google Assistant, chatbots</li></ul></div>
+<div class="tool-card yellow"><span class="emoji">🔮</span><h4>Augmented Intelligence</h4><p>Human + AI collaboration. Amplifies, does NOT replace humans.</p><ul><li>Predictive analytics</li><li>Scenario modeling</li><li>Strategic planning support</li><li>Climate & financial tools</li></ul></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>GAN = <strong>Generative Adversarial Network</strong> | VAE = <strong>Variational Autoencoder</strong></li>
+<li>Conversational AI employs 3 things: NLP + ML + NLU</li>
+<li>Conversational AI = "synthetic brain power that makes machines capable of understanding, processing and responding to human language"</li>
+<li>Generative AI generates: text, images, music, video, code, and more — NOT only text!</li>
+<li>Generative AI challenges: authenticity, bias, ethical use, need for governance</li>
+<li>Transformers architecture = powers modern LLMs including ChatGPT</li>
+</ul></div>
+
+<div class="mcq-sec">
+<div class="mcq-sec-ttl">📝 Topic 4 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q9</div><div class="mcq-q">Which 3 technologies form the backbone of Conversational AI systems?</div><ul class="opts"><li>a) GAN, VAE, and Transformer</li><li>b) Cloud Computing, Big Data, and IoT</li><li class="correct">c) NLP, ML, and NLU</li><li>d) CNN, RNN, and Autoencoder</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>NLP = language understand/generate karna | ML = interactions se seekhna | NLU = intent, sentiment, meaning extract karna. Teeno milke conversational system banate hain. Alexa, Siri sab yahi use karte hain.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q10</div><div class="mcq-q">GANs (Generative Adversarial Networks) in Generative AI are primarily used for:</div><ul class="opts"><li>a) Text generation and language modeling</li><li class="correct">b) Creating images, videos, and synthesized data</li><li>c) Voice recognition and speech-to-text</li><li>d) Reinforcement learning in game environments</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course clearly mentions: "GANs: Used for creating images, videos, and synthesized data." Transformers = text generation (GPT-3, GPT-4). VAEs = diverse outputs. GANs = visual content. Yeh distinction exam mein aata hai!</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W1 T5 -->
+<div class="topic" id="w1t5">
+<div class="topic-ttl">⚙️ Topic 5: Core AI Techniques — ML, DL, NLP, Computer Vision <span class="exam-tag">VERY IMPORTANT</span></div>
+
+<div class="wotd"><div class="wotd-ico">📚</div><div><div class="wotd-word">Word of the Day: "Ubiquitous" (यूबीक्विटस)</div><div class="wotd-meaning">Present everywhere, extremely common. "AI is ubiquitous in modern life" = AI aaj har jagah maujood hai.</div></div></div>
+
+<div class="hb">
+<p><strong>ML (Machine Learning):</strong> Data se seekhna without being explicitly programmed. Jaise bacche ko examples dikha ke sikhao — machine bhi examples (data) se patterns seekhti hai.</p>
+<p><strong>Deep Learning:</strong> ML ka advanced version with multiple layers of artificial neurons. Jaise human brain mein neurons — DL mein ANNs (Artificial Neural Networks) hote hain.</p>
+<p><strong>NLP:</strong> Computer ko Hindi/English samjhana. Google Translate, ChatGPT, Siri — sab NLP pe based. "Computational Linguistics" bhi kehte hain!</p>
+<p><strong>Computer Vision:</strong> Machines ko "aankhein" dena! Camera dekhe, machine samjhe. Face unlock, CCTV, self-driving cars.</p>
+</div>
+
+<table class="ctbl">
+<thead><tr><th>Technique</th><th>Kya Karta Hai?</th><th>Key Examples</th><th>Important Sub-types/Terms</th></tr></thead>
+<tbody>
+<tr><td><strong>Machine Learning (ML)</strong></td><td>Data se learning without explicit programming</td><td>Spam filter, recommendations, predictive analytics</td><td>Supervised, Unsupervised, Reinforcement</td></tr>
+<tr><td><strong>Deep Learning (DL)</strong></td><td>Multi-layer ANNs, complex pattern recognition</td><td>Image/voice/text recognition</td><td>CNN (images), RNN (sequences), ANN</td></tr>
+<tr><td><strong>NLP</strong></td><td>Computers samjhein human language</td><td>ChatGPT, Google Translate, sentiment analysis, chatbots</td><td>GPT, BERT, Transformers, also called "Computational Linguistics"</td></tr>
+<tr><td><strong>Computer Vision</strong></td><td>Machines understand visual information</td><td>Face recognition, self-driving, medical imaging, surveillance</td><td>Image recognition, mocap, biometrics</td></tr>
+<tr><td><strong>Expert Systems</strong></td><td>Emulate human expert decisions in specific domain</td><td>Medical diagnosis, legal reasoning</td><td>Knowledge Base + Inference Engine</td></tr>
+<tr><td><strong>Neural Networks</strong></td><td>Brain-inspired computational models</td><td>Foundation of ML and DL</td><td>Neurons, weighted connections, training</td></tr>
+</tbody>
+</table>
+
+<div class="def"><div class="def-term">📖 ML — 3 Core Types (MEMORIZE!)</div><p><strong>Supervised Learning</strong> = Labelled data se seekhna (teacher bata deta hai sahi/galat). Example: spam filter.<br><strong>Unsupervised Learning</strong> = Unlabelled data mein patterns dhundna. Example: customer segmentation.<br><strong>Reinforcement Learning</strong> = Trial & error + rewards/punishments. Example: game-playing AI, self-driving cars.</p></div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Hierarchy: <strong>AI ⊃ ML ⊃ DL</strong> (AI sabse bada umbrella, DL sabse andar)</li>
+<li>ML 3 types: <strong>Supervised, Unsupervised, Reinforcement</strong> — "SAR" yaad rakho!</li>
+<li>NLP = Also called <strong>"Computational Linguistics"</strong> — alternate name exam mein tricky question!</li>
+<li>Expert Systems = <strong>Knowledge Base + Inference Engine</strong></li>
+<li>CNN = Convolutional Neural Networks (images) | RNN = Recurrent Neural Networks (sequences)</li>
+<li>DL uses ANNs with MULTIPLE layers — "deep" = multiple hidden layers</li>
+<li>Computer Vision applications: facial recognition, mocap, fingerprint biometrics, self-driving, surveillance</li>
+</ul></div>
+
+<div class="mcq-sec">
+<div class="mcq-sec-ttl">📝 Topic 5 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q11</div><div class="mcq-q">NLP is also known as:</div><ul class="opts"><li>a) Natural Learning Protocol</li><li class="correct">b) Computational Linguistics</li><li>c) Neural Language Programming</li><li>d) Network Language Processing</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course explicitly: "NLP is also called Computational Linguistics." Yeh alternate name exam mein poochha jata hai! NLP = Natural Language Processing — computers ko human language samjhana aur generate karana.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q12</div><div class="mcq-q">Which CORRECTLY represents the relationship between AI, Machine Learning, and Deep Learning?</div><ul class="opts"><li>a) ML ⊃ AI ⊃ DL</li><li>b) DL ⊃ ML ⊃ AI</li><li class="correct">c) AI ⊃ ML ⊃ DL</li><li>d) AI = ML = DL (all are the same)</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Concentric circles: AI (largest) → ML (subset of AI) → DL (subset of ML). DL = specialized ML using multi-layer ANNs. Yeh AI ka most fundamental concept hai — har exam mein aata hai!</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q13</div><div class="mcq-q">Expert Systems in AI consist of two main components. Which option correctly identifies them?</div><ul class="opts"><li>a) Training data and Testing data</li><li>b) Input layer and Output layer</li><li class="correct">c) Knowledge Base and Inference Engine</li><li>d) Decision tree and Random forest</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Expert Systems = Knowledge Base (facts & rules domain expert ka) + Inference Engine (reasoning mechanism jo rules apply karke conclusions nikalta hai). Yeh human expert decision-making emulate karta hai specific domain mein.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W1 T6 -->
+<div class="topic" id="w1t6">
+<div class="topic-ttl red">📅 Topic 6: History & Evolution of AI <span class="exam-tag">DATES IMPORTANT</span></div>
+
+<div class="hb">
+<p><strong>1950 — Turing Test:</strong> Alan Turing ne "Computing Machinery and Intelligence" paper mein machine intelligence ka sapna dikha ya.</p>
+<p><strong>1956 — Dartmouth Conference:</strong> John McCarthy ne officially "AI" naam diya. AI ka formal janam!</p>
+<p><strong>1970s — First AI Winter:</strong> NLP ne "commonsense knowledge problem" mein fail kiya. Funding cut. "AI Winter" = sardi aa gayi field mein!</p>
+<p><strong>Late 1980s — Second AI Winter:</strong> Expert Systems brittle (rigid) aur expensive nikle. LISP machines ka market collapse hua.</p>
+<p><strong>2000s — AI Revival:</strong> Big Data + GPUs + Deep Learning — teenon ka convergence! AI phir zinda hua!</p>
+<p><strong>2022 — AI Boom:</strong> ChatGPT release hua! AI ne mainstream society mein dhoom macha di!</p>
+</div>
+
+<table class="ctbl">
+<thead><tr><th>Year/Period</th><th>Event</th><th>Key Person</th><th>Significance</th></tr></thead>
+<tbody>
+<tr><td>1950</td><td>Turing Test proposed</td><td>Alan Turing</td><td>"Computing Machinery and Intelligence" paper. First empirical test for machine intelligence.</td></tr>
+<tr><td>1956</td><td>Dartmouth Conference</td><td>John McCarthy</td><td>Term "AI" coined. Birth of AI as a formal research discipline.</td></tr>
+<tr><td>1970s</td><td>First AI Winter</td><td>—</td><td>NLP failed "commonsense knowledge problem." Symbolic AI limitations exposed.</td></tr>
+<tr><td>Late 1980s</td><td>Second AI Winter</td><td>—</td><td>Expert systems brittle & expensive. LISP machine market collapsed.</td></tr>
+<tr><td>1995</td><td>Rational Agent definition</td><td>Russell & Norvig</td><td>AI redefined as "study of rational agents."</td></tr>
+<tr><td>2000s</td><td>AI Revival</td><td>—</td><td>Big Data + GPUs + Deep Learning = three convergent factors.</td></tr>
+<tr><td>2022</td><td>ChatGPT released</td><td>OpenAI</td><td>"Modern age of AI" began. AI became mainstream globally.</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>"AI Winter" = period of reduced funding & interest after overhyped expectations failing</li>
+<li>TWO major AI Winters: <strong>1970s</strong> and <strong>Late 1980s</strong></li>
+<li>First Winter cause: NLP failed "commonsense knowledge problem"</li>
+<li>Second Winter cause: Expert Systems were "brittle" — couldn't adapt outside programmed rules</li>
+<li>AI Revival 2000s: <strong>THREE factors = Big Data + GPUs + Deep Learning</strong></li>
+<li>LISP machines = specialized hardware for Expert Systems, became obsolete</li>
+<li>ChatGPT = released by OpenAI in late 2022 → triggered modern AI boom</li>
+</ul></div>
+
+<div class="mcq-sec red">
+<div class="mcq-sec-ttl">📝 Topic 6 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q14</div><div class="mcq-q">What THREE factors led to the revival of AI in the 2000s?</div><ul class="opts"><li>a) Internet, Smartphones, and Social Media</li><li>b) Quantum Computing, Blockchain, and IoT</li><li class="correct">c) Big Data, GPUs, and Deep Learning breakthroughs</li><li>d) Cloud computing, 5G, and edge AI</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course exactly: "Revival of AI in the 2000s was driven by the convergence of THREE key factors: (1) Exponential growth of Big Data; (2) Parallel processing power of GPUs; (3) Breakthroughs in deep learning algorithms." Quantum Computing was NOT one of them!</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q15</div><div class="mcq-q">The Second AI Winter (late 1980s) was PRIMARILY caused by the failure of:</div><ul class="opts"><li>a) Natural Language Processing systems</li><li b>b) Deep Learning models that required too much data</li><li class="correct">c) Expert Systems that were brittle, expensive, and couldn't adapt outside programmed rules</li><li>d) Computer vision failures in image recognition</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Second AI Winter: Expert Systems initially successful → phir brittle (rigid) nikle → programmed rules ke bahar adapt nahi karte → expensive LISP machines market collapse. First AI Winter (1970s) mein NLP fail hua tha — yeh difference exam mein frequently asked hai!</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W1 T7 -->
+<div class="topic" id="w1t7">
+<div class="topic-ttl purple">🌍 Topic 7: AI in Everyday Life & Major Sectors</div>
+
+<div class="hb purple">
+<p>AI already hamare daily life ka hissa hai — hum notice bhi nahi karte! Google Maps → AI | Netflix → AI | Gmail spam → AI | Smart home AC → AI | Face unlock → AI!</p>
+</div>
+
+<table class="ctbl purple">
+<thead><tr><th>Sector</th><th>AI Applications</th><th>Key Terms</th></tr></thead>
+<tbody>
+<tr><td><strong>Healthcare</strong></td><td>X-ray/MRI/CT analysis, drug discovery, patient triage, telemedicine</td><td>Medical image analysis, molecular simulation</td></tr>
+<tr><td><strong>Education</strong></td><td>Adaptive learning, plagiarism detection, automated grading, ITS</td><td>ITS = Intelligent Tutoring Systems</td></tr>
+<tr><td><strong>Agriculture</strong></td><td>Crop disease detection, yield prediction, autonomous drones, precision farming</td><td>Computer Vision, predictive analytics</td></tr>
+<tr><td><strong>Finance</strong></td><td>Fraud detection, credit scoring, algorithmic trading, chatbots</td><td>OmniAI (JP Morgan), transaction analysis</td></tr>
+<tr><td><strong>Manufacturing</strong></td><td>Predictive maintenance, quality control (Computer Vision), supply chain</td><td>Industry 4.0, predictive maintenance</td></tr>
+<tr><td><strong>Governance</strong></td><td>Smart cities, disaster management, citizen chatbots, traffic optimization</td><td>Data-driven policymaking</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>ITS = Intelligent Tutoring Systems (simulate one-on-one instruction)</li>
+<li>Industry 4.0 = Manufacturing revolution with AI + automation</li>
+<li>Predictive Maintenance = equipment failure hone se PEHLE predict karna</li>
+<li>AI-related jobs pay <strong>11% MORE</strong> than non-AI roles in same company</li>
+<li>90% employers plan AI implementation by <strong>2028</strong></li>
+<li>AI may replace up to <strong>25% of jobs</strong> but creates new roles in cybersecurity, ethics, data analysis</li>
+<li>India AI market CAGR <strong>25-35%</strong> (NASSCOM 2024)</li>
+<li>AI market 2024 ≈ ₹15.38 trillion, expected ₹72.23 trillion by 2030</li>
+</ul></div>
+
+<div class="kp"><div class="kp-ttl">⭐ AI for Social Good & SDGs</div><ul>
+<li>SDG 2 (Zero Hunger) → AI crop disease detection using Computer Vision</li>
+<li>SDG 3 (Good Health) → AI bridges urban-rural healthcare divide via telemedicine</li>
+<li>SDG 4 (Quality Education) → Adaptive learning, intelligent tutoring, inclusive education</li>
+<li>SDG 13 (Climate Action) → AI analyzes satellite imagery + meteorological data for disaster prediction</li>
+</ul></div>
+</div>
+
+<!-- W1 CHAPTER TEST -->
+<div class="ch-test" id="w1test">
+<div class="test-hdr">🏆 Week 1 — Chapter Test (15 Mixed MCQs)</div>
+<div class="test-sub">SWAYAM/NPTEL exam style — pehle khud try karein, phir answer check karein!</div>
+
+<div class="mcq-item"><div class="mcq-n">T1</div><div class="mcq-q">A climate forecasting system that uses AI simulations to predict weather patterns for human policymakers represents which AI level?</div><ul class="opts"><li>a) Automated</li><li>b) Assisted</li><li class="correct">c) Augmented</li><li>d) Autonomous</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Augmented = AI + Human collaboration. Climate forecasting: AI simulations + human policymakers = strategy banate hain. AI amplifies human foresight — augmented!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T2</div><div class="mcq-q">Which statement about Generative AI is INCORRECT?</div><ul class="opts"><li>a) It is a subset of machine learning</li><li>b) GANs are used for creating images and videos</li><li>c) It poses challenges related to bias and ethical use</li><li class="correct">d) It only produces text-based content and cannot generate images or music</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d) — This statement is INCORRECT</div><p>Option (d) galat hai! Generative AI produces text, images, music, video, code, aur aur bhi bahut kuch. Sirf text tak limited NAHI hai. GANs specifically images aur videos banate hain. "Which is INCORRECT" type question mein sahi statement dhundna hai!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T3</div><div class="mcq-q">The AI revival in 2000s happened due to 3 convergent factors. Which CANNOT be listed as one of those?</div><ul class="opts"><li>a) Exponential growth of Big Data</li><li>b) Parallel processing power of GPUs</li><li class="correct">c) Development of Quantum Computing</li><li>d) Breakthroughs in deep learning algorithms</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Quantum Computing AI revival ka factor NAHI tha. Three correct factors: Big Data + GPUs + Deep Learning. Quantum Computing abhi bhi mostly experimental hai aur mainstream AI mein use nahi hoti!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T4</div><div class="mcq-q">AI-based crop disease detection using Computer Vision contributes to which UN SDG?</div><ul class="opts"><li>a) SDG 4 — Quality Education</li><li>b) SDG 3 — Good Health</li><li class="correct">c) SDG 2 — Zero Hunger</li><li>d) SDG 13 — Climate Action</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>SDG 2 = Zero Hunger. Crop disease detection → farmer ki help → crop losses reduce → food security → SDG 2. SDG 3 = telemedicine in rural areas. SDG 4 = adaptive learning. SDG 13 = climate forecasting.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T5</div><div class="mcq-q">In Reinforcement Learning, a model learns primarily by:</div><ul class="opts"><li>a) Analyzing pre-labelled datasets provided by experts</li><li>b) Finding patterns in unlabelled raw data</li><li class="correct">c) Receiving rewards or punishments through interaction with an environment</li><li>d) Copying solutions from pre-built knowledge bases</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>RL = environment se interact karo → action lo → reward/punishment milta hai → isse seekho. Jaise cycle chalana seekhna — gir ke learn karte hain! Game-playing AI, self-driving cars RL use karte hain.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T6</div><div class="mcq-q">According to NASSCOM 2024, approximately what percentage of Indian companies are in the "middle stage" of AI adoption?</div><ul class="opts"><li>a) 50%</li><li>b) 75%</li><li class="correct">c) 87%</li><li>d) 95%</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course exactly: "Around 87% of companies are in the middle stage of AI adoption in India" (NASSCOM 2024). India CAGR 25-35% expected in 3-4 years.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T7</div><div class="mcq-q">Which correctly maps AI applications to their sectors?</div><ul class="opts"><li>a) Fraud detection→Education; ITS→Finance</li><li>b) Predictive maintenance→Education; Adaptive learning→Manufacturing</li><li class="correct">c) Algorithmic trading→Finance; ITS→Education; Autonomous drones→Agriculture</li><li>d) Credit scoring→Agriculture; Drug discovery→Education</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Finance = algorithmic trading, fraud detection, credit scoring | Education = ITS, adaptive learning, automated grading | Agriculture = autonomous drones, crop disease detection, yield prediction.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T8</div><div class="mcq-q">VAE stands for:</div><ul class="opts"><li>a) Virtual AI Engine</li><li>b) Visual Analysis Engine</li><li class="correct">c) Variational Autoencoder</li><li>d) Vector AI Embedding</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>VAE = Variational Autoencoder — ek type of Generative AI model. "Useful for creating diverse outputs by encoding inputs and decoding them back into new instances." Course mentions it as one of 3 Generative AI model types.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T9</div><div class="mcq-q">The "AI Winter" term refers to:</div><ul class="opts"><li>a) AI systems that freeze or crash due to data overload</li><li>b) AI development that stops in cold climates</li><li class="correct">c) A period of reduced funding and interest in AI following overhyped expectations</li><li>d) AI systems that only work in winter months</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>AI Winter = jab AI ke baare mein bahut zyada expectations the, fulfill nahi hue, funding cut ho gayi. Field history mein 2 major winters aye — 1970s aur 1980s. Jaise literal winter mein sab slow ho jata hai!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T10</div><div class="mcq-q">AI can be viewed in two ways. Which correctly identifies these two perspectives?</div><ul class="opts"><li>a) Hardware design and Software programming</li><li>b) Robotics and Automation</li><li class="correct">c) Academic field of study and Practical technology in products</li><li>d) Mathematics and Philosophy</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Two perspectives: (1) Academic discipline — computer science, math, cognitive psychology, etc. (2) Practical technology — voice assistants, recommendations, autonomous vehicles. Both are valid views!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T11</div><div class="mcq-q">Which AI application BEST exemplifies "Predictive Maintenance" in manufacturing?</div><ul class="opts"><li>a) Designing new product models using AI creativity</li><li class="correct">b) ML algorithms analyze sensor data to forecast equipment failures before they occur</li><li>c) Replacing all human workers on assembly lines</li><li>d) Creating digital marketing campaigns</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Predictive Maintenance = ML algorithms sensor data analyze karte hain aur equipment failure ko PEHLE se predict karte hain. Downtime aur costs minimize hote hain. Industry 4.0 ka core component hai.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T12</div><div class="mcq-q">AI can replace up to what percentage of current jobs, according to the course?</div><ul class="opts"><li>a) 10%</li><li>b) 50%</li><li class="correct">c) 25%</li><li>d) 75%</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "AI automation is predicted to replace up to 25% of current jobs, but will also create roles in cybersecurity, ethics, and data analysis." AI-related jobs pay 11% MORE. 90% employers plan AI by 2028.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T13</div><div class="mcq-q">The three types of Machine Learning (from the course) are:</div><ul class="opts"><li>a) Supervised, Semi-supervised, and Transfer Learning</li><li>b) Supervised, Deep, and Recurrent Learning</li><li class="correct">c) Supervised, Unsupervised, and Reinforcement Learning</li><li>d) Forward, Backward, and Lateral Learning</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>ML ke exactly 3 types course mein: Supervised (labelled data), Unsupervised (unlabelled data patterns), Reinforcement (feedback + interaction). "SAR" yaad rakho! Deep Learning = ML ka subset, type nahi.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T14</div><div class="mcq-q">Which AI system bridging the urban-rural healthcare divide aligns with which SDG?</div><ul class="opts"><li>a) SDG 2 — Zero Hunger</li><li class="correct">b) SDG 3 — Good Health and Well-being</li><li>c) SDG 4 — Quality Education</li><li>d) SDG 9 — Industry, Innovation and Infrastructure</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>SDG 3 = Good Health. AI healthcare = diagnostic tools + telemedicine → remote areas mein health access → urban-rural divide bridge → universal health coverage → SDG 3.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T15</div><div class="mcq-q">A computer program that can ONLY play chess but cannot perform any other task is an example of:</div><ul class="opts"><li class="correct">a) Narrow AI</li><li>b) General AI</li><li>c) Superintelligent AI</li><li>d) Augmented AI</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (a)</div><p>Narrow AI = task-specific intelligence, limited functionality, operates within defined parameters. Chess program = only chess. IBM Deep Blue = classic example. All current real-world AI = Narrow AI category!</p></div></div>
+</div>
+
+<!-- WEEK 1 SUMMARY -->
+<div class="ch-sum">
+<div class="sum-ttl">📋 Week 1 — Quick Revision</div>
+<div class="sum-grid">
+<div class="sum-card"><strong>AI = Data + Algorithms</strong>McCarthy (1956), Turing (1950), Russell & Norvig (rational agent, 1995)</div>
+<div class="sum-card"><strong>3 Types of AI</strong>Narrow (current), General (theoretical/AGI), Superintelligent (hypothetical/Nick Bostrom)</div>
+<div class="sum-card"><strong>AI Spectrum (4 levels)</strong>Automated → Assisted → Augmented → Autonomous. Increasing independence.</div>
+<div class="sum-card"><strong>Gen AI Models</strong>Transformers (text/GPT), GANs (images/videos), VAEs (diverse outputs)</div>
+<div class="sum-card"><strong>Conv AI = NLP+ML+NLU</strong>Alexa, Siri, Google Assistant. "Synthetic brain power for language."</div>
+<div class="sum-card"><strong>ML Hierarchy</strong>AI ⊃ ML ⊃ DL. ML types: Supervised, Unsupervised, Reinforcement (SAR)</div>
+<div class="sum-card"><strong>NLP = Computational Linguistics</strong>GPT, BERT, Transformers power modern NLP.</div>
+<div class="sum-card"><strong>Expert Systems</strong>Knowledge Base + Inference Engine. "Brittle" → 2nd AI Winter.</div>
+<div class="sum-card"><strong>History Dates</strong>1950 Turing, 1956 McCarthy, 2 AI Winters, 2000s Revival (Big Data+GPU+DL), 2022 ChatGPT</div>
+<div class="sum-card"><strong>SDGs</strong>SDG2=Hunger, SDG3=Health, SDG4=Education, SDG13=Climate</div>
+<div class="sum-card"><strong>AI Jobs</strong>11% more pay, 90% companies adopting by 2028, 25% job replacement possible</div>
+<div class="sum-card"><strong>India AI</strong>87% in middle adoption stage, CAGR 25-35%, market ₹72T by 2030</div>
+</div>
+</div>
+</div>
+
+<!-- ██████████████████ WEEK 2 ██████████████████ -->
+<div class="week-section" id="week2">
+<div class="week-hdr wk2-hdr">
+  <div class="wnum">W2</div>
+  <div class="week-hdr-text">
+    <h2>WEEK 2: AI in Education — Pedagogy, Applications & GenAI Use Cases</h2>
+    <p>Education mein AI kaise kaam karta hai, pedagogy ke types, aur GenAI technical education mein kaise use hota hai.</p>
+  </div>
+</div>
+
+<!-- W2 T1 -->
+<div class="topic" id="w2t1">
+<div class="topic-ttl teal">⚠️ Topic 1: Challenges of Conventional Education System</div>
+
+<div class="hb">
+<p>Hamara traditional education system bohot saari problems face karta hai. Aaj ki duniya badal gayi hai lekin classrooms nahi badla!</p>
+<p><strong>1. Rote Learning:</strong> Memorize karo, exam do, bhool jao! Newton's laws recite kar sakte ho but ek cycle ke bare mein explain nahi kar sakte — yeh rote learning ka problem hai.</p>
+<p><strong>2. Exam-Oriented:</strong> Marks hi sab kuch. Growth nahi dekha jata. Fear of failure replaces joy of learning.</p>
+<p><strong>3. One-size-fits-all:</strong> Sab students alag hain lekin ek hi method! AI isko solve karta hai — personalization se.</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Challenges (Exam ke liye)</div><ul>
+<li>Overemphasis on Rote Learning = memorization over understanding and application</li>
+<li>Examination-Oriented Approach = grades over growth, fear over joy</li>
+<li>Countries like Japan and Singapore assess creativity, teamwork, not just memory</li>
+<li>Students "learn what to think, not how to think" — rote learning problem</li>
+<li>AI solution: personalization, adaptive learning, real-world application focus</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W2 T2 -->
+<div class="topic" id="w2t2">
+<div class="topic-ttl teal">🤖 Topic 2: AI Applications in Education — 6 Key Areas <span class="exam-tag">IMPORTANT</span></div>
+
+<div class="hb">
+<p>AI ne education ke 6 important areas ko transform kiya hai. Har area mein jaan lo ki AI kya karta hai, benefits kya hain!</p>
+</div>
+
+<div class="tool-grid">
+<div class="tool-card teal"><span class="emoji">📝</span><h4>1. AI-Powered Content Creation</h4><p>Benefits: Saves educator time on repetitive design, keeps materials current, enhances inclusivity (multi-language).</p><p style="margin-top:6px;font-size:.78rem;color:var(--a3);">Key Features: Automated Lesson Design, Multimedia Generation, Language Localization, Continuous Content Enhancement</p></div>
+<div class="tool-card orange"><span class="emoji">📊</span><h4>2. Intelligent Assessment & Feedback</h4><p>Auto-grading, adaptive testing, real-time feedback, predictive analytics. Tools: Gradescope, Turnitin, Duolingo.</p><p style="margin-top:6px;font-size:.78rem;color:var(--a1);">Features: Automated Grading, Adaptive Testing, Real-Time Feedback, Predictive Analytics</p></div>
+<div class="tool-card purple"><span class="emoji">🎯</span><h4>3. Personalized & Adaptive Learning</h4><p>Individual learning paths, adjusts difficulty based on performance. Khan Academy, Coursera, DreamBox.</p><p style="margin-top:6px;font-size:.78rem;color:var(--a6);">Features: Individualized Paths, Dynamic Content Adaptation, Adaptive Assessments, Gamification</p></div>
+<div class="tool-card yellow"><span class="emoji">👩‍🏫</span><h4>4. Teacher Professional Development</h4><p>Personalized training, AI coaching. Tools: Edthena, TeachFX, Coursera AI recommenders.</p><p style="margin-top:6px;font-size:.78rem;color:var(--hi);">Features: Personalized Pathways, Intelligent Feedback, Data-Driven Insights, AI Coaching</p></div>
+<div class="tool-card pink"><span class="emoji">♿</span><h4>5. Assistive Technologies (Inclusivity)</h4><p>Microsoft Seeing AI, Envision Glasses, OrCam, Google Live Transcribe, AI hearing aids, Kurzweil 3000.</p><p style="margin-top:6px;font-size:.78rem;color:var(--a7);">Vision, Hearing, Mobility, Cognitive assistance</p></div>
+<div class="tool-card red"><span class="emoji">📈</span><h4>6. Data-Driven Decision Making</h4><p>Student performance analytics, predictive modeling for at-risk learners, curriculum optimization.</p><p style="margin-top:6px;font-size:.78rem;color:var(--a4);">Features: Analytics, Predictive Modeling, Curriculum Optimization, Resource Allocation</p></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Gradescope, Turnitin = Intelligent Assessment tools (automated scoring + plagiarism)</li>
+<li>Khan Academy / Khanmigo, Coursera, DreamBox = Personalized Adaptive Learning examples</li>
+<li>Edthena, TeachFX = Teacher Professional Development AI tools</li>
+<li>Ethical Considerations: data privacy, algorithmic bias, transparency, equity & access</li>
+<li>Microsoft Seeing AI, OrCam = Vision assistance for differently-abled</li>
+<li>AI-powered content creation key features: Automated Lesson Design, Multimedia Generation, Language Localization, Continuous Content Enhancement</li>
+</ul></div>
+
+<div class="mcq-sec teal">
+<div class="mcq-sec-ttl">📝 Topic 2 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q1</div><div class="mcq-q">Which AI tool provides automated scoring AND plagiarism checking for educational assessments?</div><ul class="opts"><li>a) Khan Academy</li><li>b) DreamBox</li><li class="correct">c) Gradescope and Turnitin</li><li>d) Edthena</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course exactly: "Platforms like Gradescope and Turnitin provide automated scoring and plagiarism checks." Yeh Intelligent Assessment & Feedback category mein aate hain. Khan Academy = Adaptive Learning. Edthena = Teacher Professional Development.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q2</div><div class="mcq-q">DreamBox (Math) is an example of which AI application in education?</div><ul class="opts"><li>a) AI-Powered Content Creation</li><li>b) Intelligent Assessment & Feedback</li><li class="correct">c) Personalized and Adaptive Learning</li><li>d) Data-Driven Decision Making</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>DreamBox = Personalized Adaptive Learning. "Continuously monitors a student's strategies (not just right/wrong answers) and delivers tailored math problems in real time." Khan Academy + Coursera + DreamBox = all Personalized Learning examples.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W2 T3 -->
+<div class="topic" id="w2t3">
+<div class="topic-ttl teal">🎓 Topic 3: Pedagogical Approaches — 6 Types (2C-2I-1R+B) <span class="exam-tag">DEFINITIONS IMPORTANT</span></div>
+
+<div class="wotd"><div class="wotd-ico">📚</div><div><div class="wotd-word">Word of the Day: "Metacognition" (मेटाकॉग्निशन)</div><div class="wotd-meaning">Thinking about your own thinking — learning process ko analyze karna. "Reflective pedagogy promotes metacognition" = students apni learning ko khud examine karte hain.</div></div></div>
+
+<div class="hb">
+<p><strong>Pedagogy = Teaching ka art.</strong> It's dynamic — teacher se teacher, classroom se classroom, platform se platform alag hoti hai!</p>
+<p><strong>6 Types yaad karo = 2C-2I-1R+B:</strong> Constructivist, Collaborative (2Cs), Inquiry-Based, Integrative (2Is), Reflective (1R), Behaviourism (B)</p>
+</div>
+
+<table class="ctbl teal">
+<thead><tr><th>Approach</th><th>Learner Role</th><th>Teacher Role</th><th>Focus</th><th>Best For</th></tr></thead>
+<tbody>
+<tr><td><strong>Behaviourism</strong></td><td>Passive → Active through reinforcement</td><td>Instructor/Controller</td><td>Skills, behaviour</td><td>Foundational skills, procedural tasks</td></tr>
+<tr><td><strong>Constructivism</strong></td><td>Active knowledge constructor</td><td>Facilitator</td><td>Conceptual understanding</td><td>Problem-solving, projects</td></tr>
+<tr><td><strong>Integrative</strong></td><td>Multidisciplinary thinker</td><td>Designer of holistic tasks</td><td>Interconnected learning</td><td>Interdisciplinary education, capstones</td></tr>
+<tr><td><strong>Reflective</strong></td><td>Metacognitive learner</td><td>Mentor</td><td>Self-improvement, introspection</td><td>Professional and lifelong learning</td></tr>
+<tr><td><strong>Collaborative</strong></td><td>Team learner</td><td>Guide/mediator</td><td>Social learning</td><td>Group projects, discussions</td></tr>
+<tr><td><strong>Inquiry-Based</strong></td><td>Explorer/researcher</td><td>Coach</td><td>Investigation & discovery</td><td>Research skills, scientific thinking</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Pedagogy = "art of sharing knowledge which is dynamic in nature"</li>
+<li>Pedagogical Approach = unified method of looking at teaching (broader)</li>
+<li>Pedagogical Technique = specific actions in classroom (narrower — flipped learning, computational thinking)</li>
+<li>Behaviourism = earliest paradigm, learning = observable changes in behaviour through reinforcement</li>
+<li>Constructivism = students construct knowledge through experiences (not lectures on abstract concepts)</li>
+<li>Reflective = introspection + self-assessment + <strong>metacognition</strong></li>
+<li>Reflective strategies: Journaling, descriptive writing, group conversations, pausing to absorb</li>
+<li>Collaborative = best learning in small groups or pairs (social learning)</li>
+<li>Inquiry-Based = "seeking for truth, information or knowledge" — teacher = facilitator/coach</li>
+<li>Integrative = interlinks various disciplines (theoretical + practical + self-regulation)</li>
+<li>Importance of Pedagogy: Improves Quality, Continuous Assessment, Encourages Different Learning Styles, Eliminates Monotony, Student-Centered, Encourages Teamwork</li>
+</ul></div>
+
+<div class="mcq-sec teal">
+<div class="mcq-sec-ttl">📝 Topic 3 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q3</div><div class="mcq-q">Which pedagogical approach emphasizes introspection, self-assessment, and metacognition?</div><ul class="opts"><li>a) Constructivism</li><li>b) Behaviourism</li><li>c) Collaborative Learning</li><li class="correct">d) Reflective Pedagogy</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d)</div><p>Reflective Pedagogy: "emphasizes the importance of introspection, self-assessment, and metacognition in the learning process." Students apne experiences critically analyze karte hain. Reflective strategies: journaling, descriptive writing, group conversations.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q4</div><div class="mcq-q">Behaviourism as a pedagogical approach is PRIMARILY based on:</div><ul class="opts"><li>a) Students constructing their own knowledge through exploration</li><li class="correct">b) Learning reflected in observable changes in behaviour through external stimuli and reinforcement</li><li>c) Small groups solving problems together collaboratively</li><li>d) Students pursuing inquiry and self-directed discovery</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Behaviourism = earliest pedagogical paradigm. "Rooted in the belief that learning is reflected in observable changes in behaviour." External stimuli + reinforcement + repetition = behaviour shaping. Constructivism mein students khud knowledge construct karte hain.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q5</div><div class="mcq-q">In the 6 pedagogical approaches, "2C-2I-1R+B" refers to which combination?</div><ul class="opts"><li>a) Critical, Creative, Instructional, Independent, Rote, Behavioural</li><li class="correct">b) Constructivist, Collaborative, Inquiry-Based, Integrative, Reflective + Behaviourism</li><li>c) Conceptual, Cognitive, Interactive, Immersive, Relational + Bloom</li><li>d) Circular, Cooperative, Intellectual, Integrative, Remedial + Bloom</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course mein exactly "2C-2I-1R" mention: 2C = Constructivist + Collaborative | 2I = Inquiry-Based + Integrative | 1R = Reflective | +B = Behaviourism. Yeh mnemonic yaad rakho!</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W2 T4 -->
+<div class="topic" id="w2t4">
+<div class="topic-ttl teal">📚 Topic 4: Teacher-Centric vs Student-Centric Education</div>
+
+<table class="ctbl teal">
+<thead><tr><th>Aspect</th><th>Teacher-Centric</th><th>Student-Centric</th></tr></thead>
+<tbody>
+<tr><td>Learner Role</td><td>Passive recipient of information</td><td>Active participant, co-creator of knowledge</td></tr>
+<tr><td>Teaching Method</td><td>Lecture, dictation, textbook</td><td>Discussion, problem-solving, project-based, inquiry-based</td></tr>
+<tr><td>Assessment</td><td>Summative (exams, standardized tests)</td><td>Formative (projects, portfolios, peer reviews, journals)</td></tr>
+<tr><td>Motivation</td><td>Extrinsic (marks, rewards, fear)</td><td>Intrinsic (curiosity, real-life relevance, creativity)</td></tr>
+<tr><td>Outcome/Focus</td><td>Short-term recall, exam readiness, memory</td><td>Long-term understanding, 4Cs, critical thinking, independence</td></tr>
+<tr><td>Curriculum</td><td>Fixed, textbook-bound, abstract</td><td>Flexible, interdisciplinary, context-driven, real-life</td></tr>
+<tr><td>Classroom Setup</td><td>Desks in rows facing teacher</td><td>Group clusters, discussion circles, flexible seating</td></tr>
+<tr><td>Decision Making</td><td>Teacher decides everything</td><td>Shared responsibility, learner voice and choice</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li><strong>4Cs</strong> = Critical thinking, Collaboration, Communication, Creativity (student-centric)</li>
+<li>Summative assessment = teacher-centric (exams/standardized tests)</li>
+<li>Formative assessment = student-centric (continuous, projects, portfolios, peer reviews)</li>
+<li>NEP 2020, Bloom's Taxonomy, OBE = student-centric frameworks</li>
+<li>CCE = Continuous and Comprehensive Evaluation (student-centric)</li>
+<li>Finland + Singapore = successful student-centric models globally</li>
+<li>"Silent classroom = discipline (teacher)" vs "productive noise = learning (student)"</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W2 T5 -->
+<div class="topic" id="w2t5">
+<div class="topic-ttl teal">💡 Topic 5: GenAI Use Cases in Technical Education <span class="exam-tag">6 USE CASES</span></div>
+
+<div class="hb">
+<p>Technical education 3 persistent challenges face karta hai: Scale (bade classrooms), Diversity (varied preparation levels), Relevance (industry alignment).</p>
+<p>GenAI in 6 high-impact use cases: Think "PQACSF" — Personalized, Question paper, AI-coding, Customized labs, Syllabus content, Feedback!</p>
+</div>
+
+<div class="tool-grid">
+<div class="tool-card teal"><span class="emoji">1️⃣</span><h4>Personalized Concept Explanations</h4><p>24×7 support — multiple explanations, step-by-step derivations, analogies in simple language at different Bloom's levels for diverse students.</p></div>
+<div class="tool-card orange"><span class="emoji">2️⃣</span><h4>AI-Assisted Question Paper Design</h4><p>Generate question banks mapped to course outcomes, Bloom's Taxonomy, multiple difficulty levels, case-based questions. Faculty = final authority!</p></div>
+<div class="tool-card purple"><span class="emoji">3️⃣</span><h4>Programming & Simulation Support</h4><p>Starter code, line-by-line explanation, debugging support, test case generation. AI-generated code = learning scaffold, NOT final submission!</p></div>
+<div class="tool-card yellow"><span class="emoji">4️⃣</span><h4>Lab Preparation & Support</h4><p>Virtual lab mentor — explains objectives, predicts outcomes, interprets graphs before labs. Reduces equipment misuse, better lab utilization.</p></div>
+<div class="tool-card pink"><span class="emoji">5️⃣</span><h4>Content Creation & Curriculum Design</h4><p>Draft lecture outlines, examples, case studies, syllabus to PO mapping. Faculty = curriculum authority, AI = accelerates ideation only.</p></div>
+<div class="tool-card red"><span class="emoji">6️⃣</span><h4>Student Feedback & Mentoring</h4><p>Formative feedback, reflective prompts, learning gap identification for large classes. AI feedback = augments, NOT replaces faculty judgment!</p></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>GenAI in technical education: 3 challenges = Scale, Diversity, Relevance</li>
+<li>GenAI solution: Personalized learning + Enhanced faculty productivity + Higher-order thinking + Continuous assessment</li>
+<li>AI-generated code = <strong>learning scaffold, NOT final submissions</strong> (students must explain, modify, justify)</li>
+<li>AI feedback = augments faculty judgment, does NOT replace it</li>
+<li>Bloom's Taxonomy = framework for question difficulty levels (remember → understand → apply → analyze → evaluate → create)</li>
+<li>Faculty remains curriculum authority — AI accelerates ideation only</li>
+<li>Transformer architecture = neural network processing sequences via "attention" mechanism</li>
+<li>GenAI "hallucinations" = inaccurate outputs that seem confident — key limitation!</li>
+</ul></div>
+
+<div class="mcq-sec teal">
+<div class="mcq-sec-ttl">📝 Topic 5 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q6</div><div class="mcq-q">What is the correct stance on AI-generated code in technical education, per the course?</div><ul class="opts"><li>a) It should completely replace traditional coding assignments</li><li>b) It is equally valid as human-written code for final submission</li><li class="correct">c) It should be treated as a learning scaffold — students must explain, modify, and justify AI-assisted work</li><li>d) It is banned from all technical education settings</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course exactly: "AI-generated code or designs should be treated as learning scaffolds, not final submissions. Students must be required to explain, modify, and justify AI-assisted work to demonstrate genuine understanding and avoid plagiarism." Scaffolding = support structure to learn, not to copy!</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q7</div><div class="mcq-q">Which BEST describes a "hallucination" in the context of Generative AI systems?</div><ul class="opts"><li>a) AI systems that generate visual illusions or artwork</li><li>b) AI systems entering sleep mode due to overload</li><li class="correct">c) Inaccurate or false outputs confidently generated by AI that appear plausible</li><li>d) AI systems working in dream-like creative modes</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>"Hallucinations" = GenAI ka critical limitation. AI confidently produces errors ya false information jo accurate lagti hai. "GenAI cannot be trusted to be accurate and frequently produces errors or hallucinations." Isliye human-in-the-loop review essential hai!</p></div></div>
+</div>
+</div>
+
+<!-- W2 CHAPTER TEST -->
+<div class="ch-test teal" id="w2test">
+<div class="test-hdr">🏆 Week 2 — Chapter Test (12 MCQs)</div>
+<div class="test-sub">Pedagogy + AI in Education — exam style questions!</div>
+
+<div class="mcq-item"><div class="mcq-n">T1</div><div class="mcq-q">The "4Cs" in student-centric education refer to:</div><ul class="opts"><li>a) Calculation, Coding, Chemistry, Cognition</li><li class="correct">b) Critical thinking, Collaboration, Communication, Creativity</li><li>c) Content, Curriculum, Comprehension, Compliance</li><li>d) Competition, Certification, Concentration, Competency</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>4Cs = Critical thinking + Collaboration + Communication + Creativity. Student-centric education yahi focus karta hai for long-term skill development. Teacher-centric = short-term memory recall.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T2</div><div class="mcq-q">Which assessment approach is characteristic of student-centric education?</div><ul class="opts"><li>a) Summative — annual exams judging and ranking students</li><li class="correct">b) Formative — continuous projects, portfolios, peer reviews, and reflective journals</li><li>c) Normative — comparing students against class averages</li><li>d) Terminal — only final semester examination</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Formative = continuous, constructive, collaborative. Student-centric ka core. CCE, OBE yahi follow karte hain. Summative = teacher-centric (ek exam sab kuch decide karta hai).</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T3</div><div class="mcq-q">Which pedagogical approach is considered the "earliest paradigm" based on observable behaviour changes?</div><ul class="opts"><li>a) Constructivism</li><li>b) Integrative</li><li>c) Inquiry-Based</li><li class="correct">d) Behaviourism</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d)</div><p>Course: "Behaviourism represents one of the earliest pedagogical paradigms, rooted in the belief that learning is reflected in observable changes in behaviour." External stimuli + reinforcement = behaviour shaping.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T4</div><div class="mcq-q">Reflective learning strategies include all EXCEPT:</div><ul class="opts"><li>a) Journaling</li><li>b) Descriptive writing</li><li>c) Conversations with a group</li><li class="correct">d) Competitive examinations and ranking</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d)</div><p>Reflective strategies from course: Journaling, Descriptive writing, Conversations with a group, Pausing to absorb and digest information. Competitive examinations = traditional/summative assessment, NOT reflective strategy!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T5</div><div class="mcq-q">The Integrative pedagogical approach is BEST described as:</div><ul class="opts"><li>a) Learning through repetition and reinforcement</li><li>b) Students solving problems in small collaborative groups</li><li class="correct">c) A transformative approach that interlinks various disciplines, merging theoretical knowledge, practical skills, and self-regulation</li><li>d) Students pursuing independent inquiry and discovery</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Integrative = "a transformative approach that interlinks various disciplines, creating a rich tapestry of learning. Theoretical knowledge, practical skills and self-regulation (reflective and metacognitive skills) are merged." Best for interdisciplinary education and capstone projects.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T6</div><div class="mcq-q">In AI-Powered Content Creation, which feature ensures materials reach students with different language backgrounds?</div><ul class="opts"><li>a) Automated Lesson Design</li><li>b) Multimedia Generation</li><li class="correct">c) Language Localization</li><li>d) Continuous Content Enhancement</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Language Localization = multi-language delivery feature. "Enhances inclusivity through multi-language, multi-format delivery." The 4 key features: Automated Lesson Design, Multimedia Generation, Language Localization, Continuous Content Enhancement.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T7</div><div class="mcq-q">Which statement about GenAI in technical education is CORRECT?</div><ul class="opts"><li>a) GenAI replaces faculty in curriculum design and final assessment</li><li>b) GenAI is only useful for language and literature courses</li><li class="correct">c) GenAI acts as a "force multiplier" allowing faculty to focus on conceptual clarity, mentoring, and innovation</li><li>d) GenAI should be banned from all technical education settings</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course closing: "Generative AI is not a threat to engineering educators. It is a force multiplier — allowing faculty to focus on: Conceptual clarity, Mentoring, Innovation, Research-informed teaching." AI augments, not replaces faculty.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T8</div><div class="mcq-q">A faculty member asks GenAI to generate questions "mapped to Bloom's Taxonomy for a specific unit at different cognitive levels." This is Use Case:</div><ul class="opts"><li>a) Personalized Concept Explanations</li><li class="correct">b) AI-Assisted Question Paper & Assessment Design</li><li>c) Programming & Simulation Support</li><li>d) Content Creation & Curriculum Design</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Use Case 2 = AI-Assisted Question Paper & Assessment Design. "Faculty requests questions mapped to Bloom's Taxonomy → AI generates well-structured questions at different cognitive levels → faculty selects, edits, uses for tests." Saves time, improves OBE-aligned assessments.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T9</div><div class="mcq-q">Which country's education policy introduced a mandatory AI curriculum from Grade 3 onwards starting 2026-27?</div><ul class="opts"><li>a) USA</li><li>b) China</li><li class="correct">c) India</li><li>d) UK</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Government of India has announced plans to introduce a mandatory AI curriculum from Grade 3 onwards starting in the 2026–27 academic year, with a clear focus on ethical AI use, social responsibility, and human-centred decision-making."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T10</div><div class="mcq-q">The Transformer architecture in GenAI uses a concept called "attention." What does this enable?</div><ul class="opts"><li>a) Robots to physically watch videos and learn</li><li>b) AI systems to score students based on their focus levels</li><li class="correct">c) Understanding context and relationships across an entire text simultaneously for tasks like translation and generation</li><li>d) Filtering out irrelevant data from training datasets</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "A Transformer is a neural network architecture that processes sequences of data by focusing on how different parts of the input relate to each other — a concept known as 'attention.' This allows it to understand context and relationships across an entire text simultaneously." Powers ChatGPT, BERT, etc.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T11</div><div class="mcq-q">NEP 2020 advocates which type of education?</div><ul class="opts"><li>a) Examination-focused and marks-based education</li><li>b) Pure teacher-centric model</li><li class="correct">c) Learner-centered, multidisciplinary, and skill-based education</li><li>d) Behaviourist model with reinforcement-based learning</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>NEP 2020 = National Education Policy 2020. "Envisions learner-centered, multidisciplinary, and skill-based education — a bridge between tradition and innovation." Emphasizes digital competencies, critical thinking, and thoughtful integration of emerging technologies.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T12</div><div class="mcq-q">The "Inquiry-Based Learning" approach best supports which educational outcome?</div><ul class="opts"><li>a) Foundational skill drilling through repetition</li><li>b) Passive memorization of facts and formulas</li><li class="correct">c) Research skills and scientific thinking through exploration and high-level questioning</li><li>d) Standardized test performance improvement</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Answer</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Inquiry-Based: "A learning process that engages students by making real-world connections through exploration and high-level questioning." Teacher = facilitator/coach. Best for research skills and scientific thinking. Strategies: think-pair-share, fishbowl, jigsaw, case studies.</p></div></div>
+</div>
+
+<!-- WEEK 2 SUMMARY -->
+<div class="ch-sum">
+<div class="sum-ttl">📋 Week 2 — Quick Revision</div>
+<div class="sum-grid">
+<div class="sum-card"><strong>Ed Challenges</strong>Rote learning, exam obsession, one-size-fits-all. AI solves via personalization.</div>
+<div class="sum-card"><strong>6 AI-Ed Applications</strong>Content creation, Assessment, Adaptive Learning, Teacher Dev, Assistive Tech, Data-Driven Decisions</div>
+<div class="sum-card"><strong>6 Pedagogy Types</strong>2C-2I-1R+B: Constructivist, Collaborative, Inquiry, Integrative, Reflective, Behaviourism</div>
+<div class="sum-card"><strong>4Cs (Student-Centric)</strong>Critical thinking, Collaboration, Communication, Creativity</div>
+<div class="sum-card"><strong>Formative vs Summative</strong>Formative = student-centric (continuous) | Summative = teacher-centric (exams)</div>
+<div class="sum-card"><strong>6 GenAI Use Cases</strong>PQACSF: Personalized, Question paper, AI-coding, Customized labs, Syllabus, Feedback</div>
+<div class="sum-card"><strong>AI Code = Scaffold</strong>Not final submission! Students must explain, modify, justify AI-assisted work.</div>
+<div class="sum-card"><strong>Hallucination</strong>GenAI's confident but inaccurate outputs. Human review always required!</div>
+</div>
+</div>
+</div>
+
+<!-- ██████████████████ WEEK 3 ██████████████████ -->
+<div class="week-section" id="week3">
+<div class="week-hdr wk3-hdr">
+  <div class="wnum">W3</div>
+  <div class="week-hdr-text">
+    <h2>WEEK 3: Open Source Tools for Teaching & Learning</h2>
+    <p>Draw.io, Whiteboard, Canvas LMS, Jupyter, Orange, Quizizz, Mentimeter, Zotero, SciSpace, Scilab — sab ek saath!</p>
+  </div>
+</div>
+
+<!-- W3 T1 -->
+<div class="topic" id="w3t1">
+<div class="topic-ttl purple">📐 Topic 1: Draw.io — Block Diagram & Flowchart Creation <span class="exam-tag">TOOL DETAILS</span></div>
+
+<div class="wotd"><div class="wotd-ico">📚</div><div><div class="wotd-word">Word of the Day: "Confluence" (कॉन्फ्लुएंस)</div><div class="wotd-meaning">Meeting/joining of two things. "Draw.io integrates with Confluence for documentation" = Draw.io aur Confluence milke kaam karte hain. Broader meaning: ideas ka milna/joining.</div></div></div>
+
+<div class="hb purple">
+<p><strong>Draw.io kya hai?</strong> Bilkul free, open-source, web-based diagramming tool! No installation required for basic use — browser mein directly diagram banao!</p>
+<p><strong>Imagine karo:</strong> Tum computer networks, circuit diagrams, system flowcharts, mind maps sab ek hi tool mein bana sako — woh bhi free mein — yeh hai Draw.io!</p>
+</div>
+
+<table class="ctbl purple">
+<thead><tr><th>Feature</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Type</td><td>Free, open-source, web-based (also desktop app for offline)</td></tr>
+<tr><td>URL</td><td>https://app.diagrams.net — start immediately, NO login required</td></tr>
+<tr><td>Diagram Types</td><td>Flowcharts, UML, ER diagrams, network diagrams, mind maps, org charts, BPMN, electrical diagrams</td></tr>
+<tr><td>Libraries</td><td>Ready-made templates: Flowcharts, UML, Network, Electrical, BPMN</td></tr>
+<tr><td>Export Formats</td><td>PNG, JPEG, PDF, SVG, XML (.drawio files)</td></tr>
+<tr><td>Collaboration</td><td>Google Drive, OneDrive, Dropbox integration. Version history. Real-time sharing.</td></tr>
+<tr><td>Integrations</td><td>Confluence, Jira, GitHub, MS Word/PowerPoint (copy-paste)</td></tr>
+<tr><td>Classroom Use</td><td>Algorithm flowcharts, lab procedures, concept maps, collaborative design assignments</td></tr>
+<tr><td>Data Privacy</td><td>Diagrams saved to your storage. Data NEVER stored permanently on Draw.io servers.</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Draw.io = 100% free + open-source + works online AND offline</li>
+<li>URL = <strong>app.diagrams.net</strong> (no login required!)</li>
+<li>File formats: <strong>.drawio or .xml</strong> (editable formats)</li>
+<li>Export: PNG, JPEG, PDF, SVG, XML</li>
+<li>Integrates with Confluence, Jira, GitHub for technical documentation</li>
+<li>Best practices: consistent shapes/colors, orthogonal connectors, labeled connectors, layers for complex diagrams</li>
+<li>Data stored on: Google Drive / OneDrive / Dropbox / Local — NOT on Draw.io servers</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T2 -->
+<div class="topic" id="w3t2">
+<div class="topic-ttl purple">🖊️ Topic 2: Microsoft Whiteboard</div>
+
+<div class="hb purple">
+<p>MS Whiteboard = Digital canvas for collaboration! Teachers aur students real-time mein brainstorm, sketch, aur annotate kar sakte hain.</p>
+<p>Free with Microsoft account (MS 365 for institutions). Teams + OneNote + Office 365 se seamlessly integrate karta hai!</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Features</div><ul>
+<li>Write, draw, annotate with pens & sticky notes</li>
+<li>Insert images, documents & shapes</li>
+<li>Share and annotate PDFs during discussions</li>
+<li>Built-in templates for brainstorming & projects</li>
+<li>Real-time collaboration from any device (web, desktop, mobile)</li>
+<li>Seamless integration with Teams, OneNote & Office 365</li>
+<li>Available free with Microsoft account (included in MS 365 for institutions)</li>
+<li>Why use in teaching: Breaks monotony, promotes active participation, supports group learning, builds record of discussions</li>
+<li>Classroom Applications: STEM (equation solving), Design/Engineering (sketches), Humanities (mind maps), Project-based (Kanban boards)</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T3 -->
+<div class="topic" id="w3t3">
+<div class="topic-ttl purple">🖥️ Topic 3: Canvas LMS (Learning Management System) <span class="exam-tag">FEATURES</span></div>
+
+<div class="hb purple">
+<p>Canvas = Cloud-based Learning Management System. Yeh ek online platform hai jahan teachers courses create karte hain, students submit karte hain, grades milte hain — sab digital!</p>
+</div>
+
+<table class="ctbl purple">
+<thead><tr><th>Canvas Feature</th><th>Kya Karta Hai?</th></tr></thead>
+<tbody>
+<tr><td>Modules</td><td>Organize content by weeks/topics — Pages, Assignments, Quizzes, Discussions, Links, Files</td></tr>
+<tr><td>Assignments</td><td>Graded/ungraded, submission: text/file/URL/media, rubrics, integrated with Grades</td></tr>
+<tr><td>Discussions</td><td>Collaborative learning, graded/ungraded, threaded replies</td></tr>
+<tr><td>Quizzes</td><td>MCQ, True/False, Fill-in, Essay; time limits, auto-grading, analytics, question banks</td></tr>
+<tr><td>Grades</td><td>Centralized, text/audio/video feedback, auto-calculated totals</td></tr>
+<tr><td>Calendar</td><td>Color-coded deadlines, drag-and-drop, sync with Google/Outlook</td></tr>
+<tr><td>Communication</td><td>Inbox (private), Announcements (broadcasts), Conferences (live sessions)</td></tr>
+<tr><td>People & Groups</td><td>Group workspaces with discussions + files + pages</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Canvas = cloud-based LMS, supports face-to-face AND blended learning</li>
+<li>Global Navigation Menu options: Dashboard, Courses, Calendar, Inbox, History, Help</li>
+<li>Quiz types: MCQ, True/False, Fill-in, Essay</li>
+<li>Student View = preview course as student before publishing</li>
+<li>Syllabus = auto-generated assignment list with due dates</li>
+<li>People & Groups = each group gets own workspace</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T4 -->
+<div class="topic" id="w3t4">
+<div class="topic-ttl purple">📒 Topic 4: Jupyter Notebook <span class="exam-tag">RESEARCH TOOL</span></div>
+
+<div class="hb purple">
+<p>Jupyter = ek notebook jisme code, text explanation, equations, aur visualizations sab ek saath! Imagine kar ek assignment jisme tum code bhi likho, output bhi dekho, explanation bhi dena ho — sab ek file mein!</p>
+</div>
+
+<table class="ctbl purple">
+<thead><tr><th>Aspect</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Type</td><td>Open-source, web-based interactive environment</td></tr>
+<tr><td>Languages</td><td>Supports 40+ languages (Python, R, Julia, etc.)</td></tr>
+<tr><td>Installation</td><td>Via Anaconda or pip install jupyter (offline). Cloud: Google Colab, Kaggle, JupyterHub, JupyterLite</td></tr>
+<tr><td>For Teachers</td><td>Live coding during lectures, interactive assignments, show code + explanation + output together</td></tr>
+<tr><td>For Students</td><td>Hands-on learning, real-time code execution, submit as assignments</td></tr>
+<tr><td>For Researchers</td><td>Reproducible research, combine experiment code + results + documentation, share via GitHub</td></tr>
+<tr><td>Compatible ML Libraries</td><td>TensorFlow, PyTorch, Scikit-learn</td></tr>
+<tr><td>Visualization</td><td>Matplotlib, Seaborn, Plotly</td></tr>
+<tr><td>Collaboration</td><td>JupyterHub (multi-user), GitHub integration</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Jupyter = code + markdown text + LaTeX equations + visuals in ONE notebook</li>
+<li>Supports <strong>40+ programming languages</strong> (Python, R, Julia)</li>
+<li>Cloud versions: <strong>Google Colab, Kaggle Notebooks, JupyterHub, JupyterLite</strong></li>
+<li>Install command: pip install jupyter OR via Anaconda</li>
+<li>Export formats: PDF, HTML, .ipynb files</li>
+<li>Promotes transparency and reproducibility in research</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T5 -->
+<div class="topic" id="w3t5">
+<div class="topic-ttl purple">🍊 Topic 5: Orange Data Mining</div>
+
+<div class="hb purple">
+<p>Orange = Visual drag-and-drop tool for data science! No coding needed — bas widgets ko connect karo aur machine learning karo! Beginners ke liye perfect!</p>
+<p>University of Ljubljana (Bioinformatics Lab) ne develop kiya. Free + open-source!</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Features & Points</div><ul>
+<li>Drag-and-drop workflow design using <strong>widgets</strong></li>
+<li>Supports: data import, cleaning, visualization, modeling, evaluation</li>
+<li>Interactive visualizations: scatter plots, box plots, heatmaps, trees</li>
+<li>Built-in ML models: classification, clustering, regression</li>
+<li>Download: orange.biolab.si | Available: Windows, macOS, Linux</li>
+<li>Add-ons: Text Mining, Image Analytics, Bioinformatics, Time Series</li>
+<li>Integrates with Python scripting for advanced use</li>
+<li>Benefits for Students: No programming barriers, visualize patterns instantly</li>
+<li>Benefits for Teachers: Hands-on lab sessions without coding, demonstrate data science visually</li>
+<li>Recently renamed as <strong>"Wayground"</strong> (new features added)</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T6 -->
+<div class="topic" id="w3t6">
+<div class="topic-ttl purple">🎮 Topic 6: Quizizz & Mentimeter <span class="exam-tag">ENGAGEMENT TOOLS</span></div>
+
+<div class="tool-grid">
+<div class="tool-card purple"><span class="emoji">🎯</span><h4>Quizizz</h4><p>Gamified quiz & assessment platform. Uses AI to personalize learning and automate grading.</p><ul><li>AI-assisted question generation from text/docs</li><li>Adaptive practice adjusts difficulty</li><li>Smart feedback: instant, personalized</li><li>Automated reports: accuracy, time, misconceptions</li><li>Integrates with Google Classroom, Teams, LMS</li><li>Supports multimedia: images, audio, video</li><li>Previously renamed as <strong>Wayground</strong></li></ul></div>
+<div class="tool-card pink"><span class="emoji">📊</span><h4>Mentimeter</h4><p>Cloud-based interactive presentation platform. Real-time audience participation via smartphones.</p><ul><li>Live polls, quizzes, word clouds, Q&A</li><li>Question types: MCQ, Word Cloud, Open-Ended, Scales, Ranking, Quiz Competition, 2x2 Matrix, Pin on Image, Q&A Session</li><li>Works in classrooms, webinars, conferences</li><li>Free & paid plans. Web-based (no audience install)</li><li>Presenter at mentimeter.com; audience joins with code</li></ul></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Quizizz = gamified + AI-powered + formative + summative assessments</li>
+<li>Quizizz renamed as <strong>Wayground</strong> with new features (VoyageMath, Curriculum Mapping)</li>
+<li>Mentimeter = participants join with a CODE (no installation on their device)</li>
+<li>Mentimeter question types: 9 types including Word Cloud, 2x2 Matrix, Pin on Image</li>
+<li>Both tools support data analytics and engagement metrics</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T7 -->
+<div class="topic" id="w3t7">
+<div class="topic-ttl purple">📚 Topic 7: Research Tools — Zotero, SciSpace, Research Rabbit, Explainpaper <span class="exam-tag">RESEARCH TOOLS</span></div>
+
+<div class="tool-grid">
+<div class="tool-card purple"><span class="emoji">📚</span><h4>Zotero</h4><p>Free, open-source reference management. Browser integration + automatic metadata + Word/Google Docs integration.</p><ul><li>Browser Integration</li><li>Automatic Metadata Extraction</li><li>Folder-based Organization</li><li>Tagging and Notes</li><li>Citation Generation</li><li>Cloud Syncing</li></ul></div>
+<div class="tool-card pink"><span class="emoji">🔗</span><h4>Connected Papers</h4><p>Visual tool for exploring related academic papers via graph based on shared references.</p><ul><li>Enter title/DOI → visual graph generated</li><li>Each node = paper; links = conceptual similarity</li><li>Discover foundational and recent works</li><li>Export related paper lists</li></ul></div>
+<div class="tool-card teal"><span class="emoji">🤖</span><h4>SciSpace (AI Research Assistant)</h4><p>AI-powered platform to explore, understand, and write research papers.</p><ul><li>Ask AI to clarify sections</li><li>Searches PubMed, IEEE, etc.</li><li>Writing + Citation assistance (APA, MLA, IEEE)</li><li>Integration with Zotero/Mendeley</li><li>Summaries + Connected Papers view</li></ul></div>
+<div class="tool-card yellow"><span class="emoji">🐇</span><h4>Research Rabbit</h4><p>Free, intelligent literature discovery platform. Visual networks of papers, authors, citations.</p><ul><li>Visual Graph Interface</li><li>Automatic discovery of related works</li><li>Collections (thematic grouping)</li><li>Collaborative Sharing</li><li>Integration with Zotero (sync)</li><li>Timeline View (chronological)</li></ul></div>
+<div class="tool-card orange"><span class="emoji">📄</span><h4>Explainpaper</h4><p>Web-based AI assistant for reading research papers. Highlight difficult text → instant simplified explanation.</p><ul><li>Designed by Stanford researchers</li><li>Upload PDFs, highlight any text</li><li>Compare Mode: original vs simplified</li><li>Context-Aware: uses full paper context</li><li>Private & Secure: uploads not shared publicly</li></ul></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Zotero = free, open-source reference manager. Integrates with Word, Google Docs, browsers.</li>
+<li>Connected Papers = visual graph tool (nodes = papers, links = conceptual similarity)</li>
+<li>Zotero + Connected Papers workflow: Connected Papers for discovery → Zotero for organizing & citing</li>
+<li>SciSpace = AI-powered research assistant from PubMed, IEEE databases</li>
+<li>Research Rabbit = syncs with Zotero. Free platform. Visual networks.</li>
+<li>Explainpaper = designed by <strong>Stanford researchers</strong> to make research accessible</li>
+<li>Research Rabbit URL: <strong>researchrabbitapp.com</strong></li>
+</ul></div>
+
+<div class="mcq-sec purple">
+<div class="mcq-sec-ttl">📝 Topics 1-7 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q1</div><div class="mcq-q">What is the URL for Draw.io, and does it require login to start?</div><ul class="opts"><li>a) www.draw.io — requires mandatory registration</li><li class="correct">b) app.diagrams.net — NO login required to start</li><li>c) diagrams.google.com — Google account only</li><li>d) www.drawflow.io — requires institutional email</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course: "Visit https://app.diagrams.net – start drawing immediately (no login required)." Optional login for saving to cloud. Files saved as .drawio or .xml. This is a frequently tested detail!</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q2</div><div class="mcq-q">Which Cloud versions allow Jupyter Notebook without installation? (Choose BEST answer)</div><ul class="opts"><li>a) AWS Sagemaker and Microsoft Azure ML only</li><li class="correct">b) Google Colab, Kaggle Notebooks, JupyterHub, and JupyterLite</li><li>c) Only GitHub Codespaces</li><li>d) Only institutional university servers</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course exactly mentions all four: Google Colab, Kaggle Notebooks, JupyterHub, JupyterLite as cloud versions requiring "no installation, accessible anywhere." These are the course-specific examples to remember.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q3</div><div class="mcq-q">Orange Data Mining was developed by:</div><ul class="opts"><li>a) MIT Media Lab</li><li>b) Stanford AI Lab</li><li class="correct">c) University of Ljubljana, Bioinformatics Lab</li><li>d) Indian Institute of Technology</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course specifically: "Developed by the University of Ljubljana, Bioinformatics Lab." Orange uses drag-and-drop widgets and recently released Wayground as updated version. Download from orange.biolab.si.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q4</div><div class="mcq-q">In Mentimeter, how do audience members participate in an interactive session?</div><ul class="opts"><li>a) They download the Mentimeter app and create accounts</li><li class="correct">b) They join via a code provided by the presenter through any web browser</li><li>c) They require institutional login credentials</li><li>d) They send responses via SMS only</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course: "Presenter creates at mentimeter.com; participants join with a code" — no installation required for audience. Web-based on any device. Free and paid plans available.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q5</div><div class="mcq-q">Explainpaper was designed by researchers from which institution?</div><ul class="opts"><li>a) MIT</li><li>b) Harvard</li><li class="correct">c) Stanford</li><li>d) Oxford</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Designed by Stanford researchers to make academic reading easier for everyone." Explainpaper = upload PDF, highlight difficult text, get instant simplified AI explanation. Uses context-aware AI language models.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W3 T8 -->
+<div class="topic" id="w3t8">
+<div class="topic-ttl purple">🔬 Topic 8: Scilab Xcos — Open Source Simulator</div>
+
+<div class="hb purple">
+<p>Scilab Xcos = MATLAB Simulink ka free open-source alternative! Engineering students ke liye — mechanical, electrical, thermal, hydraulic, control systems sab simulate kar sako visually!</p>
+<p>Download karo Scilab se → Xcos icon click karo → Start karo! Free, no license required!</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Scilab Xcos = open-source alternative to <strong>MATLAB Simulink</strong></li>
+<li>Download from <strong>www.scilab.org</strong> (Xcos included in Scilab)</li>
+<li>Features: drag-and-drop block diagrams, continuous/discrete/hybrid system simulation</li>
+<li>Real-time graphical visualization using <strong>scopes</strong></li>
+<li>Libraries: Continuous, Discrete, Mathematical, Logical + domain-specific (Electrical, Mechanical, Hydraulic, Control Systems)</li>
+<li>Cross-platform: Windows, macOS, Linux | No license needed!</li>
+<li>Building Model Steps: Open Xcos → Select blocks → Connect with arrows → Set parameters → Run simulation</li>
+<li>Export: .xcos files or XML format</li>
+</ul></div>
+
+<div class="mcq-sec purple">
+<div class="mcq-sec-ttl">📝 Topic 8 MCQ</div>
+<div class="mcq-item"><div class="mcq-n">Q6</div><div class="mcq-q">Scilab Xcos is described as a free open-source alternative to which commercial tool?</div><ul class="opts"><li>a) AutoCAD</li><li>b) ANSYS</li><li class="correct">c) MATLAB Simulink</li><li>d) Adobe Illustrator</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Open-source alternatives to commercial tools like MATLAB Simulink." Xcos = graphical editor for modeling and simulating dynamic systems. Integrated with Scilab — an open-source numerical computation tool. Free, no license!</p></div></div>
+</div>
+</div>
+
+<!-- W3 CHAPTER TEST -->
+<div class="ch-test purple" id="w3test">
+<div class="test-hdr">🏆 Week 3 — Chapter Test (12 MCQs)</div>
+<div class="test-sub">Open Source Tools — sab tools ke details yaad hain?</div>
+
+<div class="mcq-item"><div class="mcq-n">T1</div><div class="mcq-q">Which feature of Draw.io allows diagrams to be integrated into team documentation alongside code repositories?</div><ul class="opts"><li>a) PNG export feature</li><li>b) Offline desktop app</li><li class="correct">c) Integration with Confluence, Jira, and GitHub</li><li>d) PDF printing capability</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Draw.io integrates with Confluence, Jira, GitHub for technical documentation. Yeh teams ko allow karta hai ki code aur diagrams ek hi platform pe maintain karein. Version history aur change tracking bhi milti hai.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T2</div><div class="mcq-q">Canvas LMS primarily serves which purpose in education?</div><ul class="opts"><li>a) Only creating diagrams and flowcharts</li><li>b) Only real-time polling and surveys</li><li class="correct">c) Cloud-based online teaching, learning, assessment, and collaboration supporting face-to-face and blended learning</li><li>d) Only data science and machine learning tasks</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Canvas = A cloud-based Learning Management System used globally. Enables online teaching, learning, assessment, and collaboration. Supports face-to-face and blended learning environments."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T3</div><div class="mcq-q">Jupyter Notebook supports how many programming languages?</div><ul class="opts"><li>a) 5 languages (only Python, R, Java, C++, MATLAB)</li><li>b) 10 languages</li><li class="correct">c) 40+ languages including Python, R, Julia</li><li>d) Only Python</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Supports 40+ programming languages (Python, R, Julia, etc.)" This is a specifically stated number in the course material.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T4</div><div class="mcq-q">In Connected Papers, what does each NODE in the generated graph represent?</div><ul class="opts"><li>a) An author's research career</li><li>b) A university or institution</li><li class="correct">c) A research paper, with links representing conceptual similarity</li><li>d) A journal volume or issue</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Each node = a paper; links = conceptual similarity." Enter title/DOI → system generates visual graph → nodes are papers, connected by shared references/concepts. Helps in literature review and discovering influential works.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T5</div><div class="mcq-q">The Zotero + Connected Papers combined workflow is:</div><ul class="opts"><li>a) Use Zotero for discovery, Connected Papers for organizing</li><li class="correct">b) Use Connected Papers for discovery → download papers → add to Zotero for organizing and citing</li><li>c) Use both tools simultaneously with automatic synchronization</li><li>d) Use Connected Papers for writing, Zotero for visualization</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Correct workflow: (1) Identify papers in Connected Papers (discovery). (2) Download and add to Zotero (organization). (3) Annotate and cite in your work (reference management). Connected Papers = visual discovery tool. Zotero = organizing + citing tool.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T6</div><div class="mcq-q">Which Orange Data Mining feature allows users WITHOUT programming knowledge to perform machine learning?</div><ul class="opts"><li>a) Command-line scripting interface</li><li b>b) JSON configuration files</li><li class="correct">c) Drag-and-drop widget-based workflow design</li><li>d) SQL query builder</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Orange's key differentiator: "Drag-and-drop workflow design using widgets." No programming needed. Students can build and test ML models interactively without coding barriers. "Ideal for beginners & experts alike."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T7</div><div class="mcq-q">Microsoft Whiteboard is FREE with which account type?</div><ul class="opts"><li>a) Gmail / Google account</li><li>b) Any social media account</li><li class="correct">c) Microsoft account (included in MS 365 for institutions)</li><li>d) Paid subscription only</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Free with Microsoft account (included in MS 365 for institutions)." Integrates with Teams, OneNote, Office 365. Share link → instant collaboration.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T8</div><div class="mcq-q">Draw.io files are saved in which format(s)?</div><ul class="opts"><li>a) .pptx and .docx only</li><li>b) .pdf and .jpg only</li><li class="correct">c) .drawio or .xml (editable formats)</li><li>d) .csv and .xlsx only</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Files saved as .drawio or .xml (editable formats)." Export options: PNG, JPEG, PDF, SVG, XML. The native editable format is .drawio or .xml.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T9</div><div class="mcq-q">In Quizizz (now partly Wayground), which AI feature adjusts question difficulty based on student performance?</div><ul class="opts"><li>a) Smart Notifications</li><li class="correct">b) Adaptive Practice</li><li>c) Curriculum Mapping</li><li>d) Immersive Experiences</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course: "Adaptive practice adjusts difficulty based on performance" — this is one of Quizizz's Key AI Features. Other AI features: AI-assisted question generation, Smart feedback, Automated reports.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T10</div><div class="mcq-q">Scilab Xcos's built-in visualization tool for observing simulation outputs in real-time is called:</div><ul class="opts"><li>a) Plotter</li><li>b) Charts</li><li class="correct">c) Scopes</li><li>d) Dashboard</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Real-time graphical visualization using scopes." Scopes = Xcos mein real-time graphical output display. Jaise oscilloscope in electronics labs!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T11</div><div class="mcq-q">Research Rabbit syncs directly with which reference management tool?</div><ul class="opts"><li>a) Mendeley</li><li>b) EndNote</li><li class="correct">c) Zotero</li><li>d) RefWorks</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Research Rabbit seamlessly syncs your Zotero collections. Any paper you save in Zotero appears automatically in Research Rabbit for visualization." Zotero = storage, Research Rabbit = discovery & visualization.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T12</div><div class="mcq-q">SciSpace (AI Research Assistant) helps users in writing by:</div><ul class="opts"><li>a) Generating complete research papers automatically</li><li class="correct">b) Providing citation formatting in APA, MLA, IEEE and AI support for drafting and editing academic content</li><li>c) Only searching Google Scholar</li><li>d) Converting handwritten notes to typed text</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course: "Writing and Citation Assistance: AI support for drafting and editing academic content. Automatically format references (APA, MLA, IEEE). Manage citations efficiently within your workspace." SciSpace also searches PubMed, IEEE and provides summaries.</p></div></div>
+</div>
+
+<!-- WEEK 3 SUMMARY -->
+<div class="ch-sum purple">
+<div class="sum-ttl">📋 Week 3 — Quick Revision</div>
+<div class="sum-grid">
+<div class="sum-card"><strong>Draw.io</strong>app.diagrams.net, no login, .drawio/.xml files, exports PNG/PDF/SVG</div>
+<div class="sum-card"><strong>MS Whiteboard</strong>Free with MS account, Teams integration, real-time collaboration</div>
+<div class="sum-card"><strong>Canvas LMS</strong>Cloud-based, face-to-face + blended, Modules/Assignments/Quizzes/Discussions</div>
+<div class="sum-card"><strong>Jupyter Notebook</strong>40+ languages, Google Colab/Kaggle/JupyterHub cloud versions, code+text+visuals</div>
+<div class="sum-card"><strong>Orange Data Mining</strong>University of Ljubljana, drag-and-drop widgets, orange.biolab.si, renamed Wayground</div>
+<div class="sum-card"><strong>Quizizz → Wayground</strong>Gamified AI assessment, adaptive practice, Google Classroom integration</div>
+<div class="sum-card"><strong>Mentimeter</strong>9 question types, audience joins with code, no installation needed</div>
+<div class="sum-card"><strong>Zotero</strong>Free open-source reference manager, browser integration, citation generation</div>
+<div class="sum-card"><strong>Connected Papers</strong>Visual graph: node = paper, links = similarity. Enter DOI → graph generated</div>
+<div class="sum-card"><strong>Research Rabbit</strong>Visual networks, syncs with Zotero, Timeline View, researchrabbitapp.com</div>
+<div class="sum-card"><strong>SciSpace</strong>AI research assistant, PubMed/IEEE search, APA/MLA/IEEE citations</div>
+<div class="sum-card"><strong>Scilab Xcos</strong>Free MATLAB Simulink alternative, scopes, scilab.org, .xcos/.xml files</div>
+</div>
+</div>
+</div>
+
+<!-- ██████████████████ WEEK 4 ██████████████████ -->
+<div class="week-section" id="week4">
+<div class="week-hdr wk4-hdr">
+  <div class="wnum">W4</div>
+  <div class="week-hdr-text">
+    <h2>WEEK 4: Ethics, Data Protection & AI Policy</h2>
+    <p>DPDP Act, DPIA, Ethical AI use, Faculty Readiness, AI Policy, Research Ethics — sab cover!</p>
+  </div>
+</div>
+
+<!-- W4 T1 -->
+<div class="topic" id="w4t1">
+<div class="topic-ttl red">🔒 Topic 1: Data Protection — DPDP Act, Data Principal, Data Fiduciary <span class="exam-tag">LEGAL TERMS</span></div>
+
+<div class="wotd"><div class="wotd-ico">📚</div><div><div class="wotd-word">Word of the Day: "Fiduciary" (फिड्यूशरी)</div><div class="wotd-meaning">A person/entity entrusted to act in another's best interest. "Data Fiduciary" = koi bhi institution jo aapka data handle kare responsibly. Like a bank trustee.</div></div></div>
+
+<div class="hb">
+<p><strong>DPDP Act</strong> = India's Digital Personal Data Protection Act, 2023. Yeh law protect karta hai India mein log ke personal digital data ko.</p>
+<p><strong>Data Principal</strong> = Jiska data collect ho raha hai — WOH khud! Student ya staff ek "Data Principal" hain — data ka owner! Passive "subject" nahi!</p>
+<p><strong>Data Fiduciary</strong> = Jo decide karta hai data kyu aur kaise use hoga. Colleges/institutes jo student data process karte hain = Data Fiduciaries. Inki zimmedari hai data safely handle karna.</p>
+</div>
+
+<div class="def"><div class="def-term">📖 Key Legal Terms — DPDP Act</div>
+<p><strong>Data Principal:</strong> Individual whose personal data is collected. They OWN their data and have rights over it — not just a passive "subject." In academic institutes = students and staff.<br>
+<strong>Data Fiduciary:</strong> Any entity that decides "purpose" and "means" of processing personal data. Must manage data with consent, security, and transparency for Data Principal. Institutions = Data Fiduciaries.<br>
+<strong>DPDP Act 2023:</strong> India's Digital Personal Data Protection Act. Governs processing of digital personal data. Grants individuals rights like correction, erasure, grievance redressal.<br>
+<strong>DPDP Rules:</strong> Notified in November 2025 — operationalise the Act. Sets clearer expectations for recordkeeping, grievance handling, institution-level practices.</p></div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>DPDP Act = Digital Personal Data Protection Act, <strong>2023</strong></li>
+<li>DPDP Rules notified in <strong>November 2025</strong></li>
+<li>Data Principal = data ka owner (student/staff) — NOT passive subject</li>
+<li>Data Fiduciary = entity deciding purpose + means of data processing (institutions)</li>
+<li>6 Types of institutional data: Admissions/identity, Academic records, Attendance/LMS logs, Biometric images, Research datasets, Mentoring notes</li>
+<li>6 Principles for data management: Lawful purpose & minimalism, Data governance & accountability, Privacy by design & default, Transparency & consent, Contractual safeguards, Training</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W4 T2 -->
+<div class="topic" id="w4t2">
+<div class="topic-ttl red">📋 Topic 2: Data Inventory & DPIA</div>
+
+<div class="hb">
+<p><strong>Data Inventory</strong> = College ke paas kaun sa data hai, uska structured record. Pehle pata karo ki tumhare paas kya hai — tab protect karo!</p>
+<p><strong>DPIA (Data Protection Impact Assessment)</strong> = Data use karne se pehle risks assess karo. Data inventory = WHAT data hai | DPIA = HOW safely use karein.</p>
+<p>Together they work: Inventory → visibility | DPIA → judgment (risk assessment)</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ DPIA — 7 Components</div><ul>
+<li><strong>1. Basic Information:</strong> Institution, department, system name, DPIA owner</li>
+<li><strong>2. Purpose and Legal Basis:</strong> Why data processed, on what legal basis</li>
+<li><strong>3. Categories of Data:</strong> Identity, academic, attendance, biometric, behavioral data</li>
+<li><strong>4. Data Subjects:</strong> Who (students/faculty/staff/external learners), how many, frequency</li>
+<li><strong>5. Data Flows:</strong> Where collected, stored, how long retained, external vendors</li>
+<li><strong>6. Risk Identification:</strong> Privacy, security, ethical, legal risks</li>
+<li><strong>7. Sign-off:</strong> DPIA owner + authorized officer with dates</li>
+</ul></div>
+
+<div class="kp"><div class="kp-ttl">⭐ Data Inventory Components</div><ul>
+<li>Data Owner (Role), Data Subjects, Data Type, Purpose, Storage Location, Access Roles, Retention Period, AI/Analytics Use (Y/N), Security Controls</li>
+<li>Good practices: Inventory & classification, Provenance documentation, Data accuracy, Secure storage + backups, Retention and responsible deletion</li>
+</ul></div>
+
+<div class="mcq-sec red">
+<div class="mcq-sec-ttl">📝 Topic 1-2 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q1</div><div class="mcq-q">Under India's DPDP Act 2023, a student whose personal data is collected by a college is called:</div><ul class="opts"><li>a) Data Controller</li><li>b) Data Fiduciary</li><li class="correct">c) Data Principal</li><li>d) Data Processor</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Data Principal = individual whose personal data is collected. Student = Data Principal = data ka owner. Rights: correction, erasure, grievance redressal. College = Data Fiduciary (decides purpose + means of processing).</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q2</div><div class="mcq-q">The DPDP Rules (operationalizing the 2023 Act) were notified in which month and year?</div><ul class="opts"><li>a) January 2024</li><li>b) March 2023</li><li class="correct">c) November 2025</li><li>d) August 2026</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "In November 2025, the Government notified the DPDP Rules, which operationalise parts of the Act." This set clearer expectations for recordkeeping, grievance handling, and institution-level practices.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q3</div><div class="mcq-q">A Data Inventory should include which field to identify whether a dataset needs additional safeguards?</div><ul class="opts"><li>a) Number of student complaints</li><li class="correct">b) AI or Analytics Use (Y/N)</li><li>c) Department budget allocation</li><li>d) Faculty teaching hours</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course: "The inventory should also indicate whether any dataset is used for analytics or artificial intelligence applications, as these uses typically require additional safeguards." AI/Analytics use = Y/N field in Data Inventory.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W4 T3 -->
+<div class="topic" id="w4t3">
+<div class="topic-ttl red">⚖️ Topic 3: Ethical & Responsible Use of GenAI — 8 Key Concerns <span class="exam-tag">VERY IMPORTANT</span></div>
+
+<div class="hb">
+<p>GenAI powerful hai lekin serious ethical concerns bhi hain. Ek ethical engineer/educator ko yeh sab pata hona chahiye!</p>
+</div>
+
+<table class="ctbl red">
+<thead><tr><th>#</th><th>Concern</th><th>Explanation (Hinglish)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Worsening Digital Poverty</strong></td><td>GenAI ka power rich/tech-advanced countries mein concentrate hota hai. Data-poor regions aur marginalized communities aur peeche reh jaate hain.</td></tr>
+<tr><td>2</td><td><strong>Outpacing Regulation</strong></td><td>GenAI itni tezi se aage badh raha hai ki laws aur regulations peeche reh jaate hain. User privacy unprotected.</td></tr>
+<tr><td>3</td><td><strong>Lack of Consent</strong></td><td>GenAI models internet content scrape karte hain without owner's permission. "Right to be forgotten" violate ho sakta hai — data model se remove karna possible nahi.</td></tr>
+<tr><td>4</td><td><strong>Explainability (Black Box)</strong></td><td>GenAI models ke inner workings opaque (black box) hain. Bias perpetuate hota hai, user trust erode hota hai.</td></tr>
+<tr><td>5</td><td><strong>Bias</strong></td><td>Training data mein social, cultural, gender biases hain — AI woh reproduce karta hai. Systematically skewed outputs.</td></tr>
+<tr><td>6</td><td><strong>Content Pollution (AI Slop)</strong></td><td>"AI Slop" = GenAI se bana low-quality, inaccurate, meaningless content internet ko pollute kar raha hai.</td></tr>
+<tr><td>7</td><td><strong>Marginalization</strong></td><td>Dominant viewpoints reproduce hote hain — already marginalized voices aur invisible ho jaati hain.</td></tr>
+<tr><td>8</td><td><strong>Deepfakes and Malpractice</strong></td><td>GANs se sophisticated deepfakes banane aasaan ho gaya hai — disinformation, criminal acts facilitate.</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>"AI Slop" = low-quality, inaccurate AI-generated content perceived to show lack of effort/quality</li>
+<li>Deepfakes = primarily made using <strong>GANs (Generative Adversarial Networks)</strong></li>
+<li>"Black Box" problem = GenAI explainability issue — inner workings opaque</li>
+<li>"Right to be forgotten" = principle that data should be removable — GenAI violates this</li>
+<li>7-Step Practical Framework: Mindset Shift → Dialogue → Skill Development → Community → Critical Thinking → Ethics → Institutionalizing</li>
+</ul></div>
+
+<div class="mcq-sec red">
+<div class="mcq-sec-ttl">📝 Topic 3 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q4</div><div class="mcq-q">The term "AI Slop" refers to:</div><ul class="opts"><li>a) Poorly designed AI hardware</li><li>b) Old, outdated AI models</li><li class="correct">c) Digital content made with GenAI that shows lack of effort, quality, or deeper meaning, overwhelming the internet</li><li>d) AI systems that malfunction and produce random outputs</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course exactly: "AI slop is digital content made with generative artificial intelligence, specifically when perceived to show a lack of effort, quality or deeper meaning, and an overwhelming volume of production. AI slop is filling the web." This is listed as the "Content Pollution" concern.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q5</div><div class="mcq-q">Deepfakes primarily use which AI technology to create them?</div><ul class="opts"><li>a) Expert Systems</li><li>b) BERT Transformers</li><li class="correct">c) GANs (Generative Adversarial Networks)</li><li>d) Reinforcement Learning</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "GenAI, particularly systems using Generative Adversarial Networks (GANs), makes it increasingly easy to create sophisticated 'deepfakes' that spread disinformation and facilitate unethical or criminal acts." GANs = deepfakes ka primary technology!</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W4 T4 -->
+<div class="topic" id="w4t4">
+<div class="topic-ttl red">👩‍🏫 Topic 4: Faculty Readiness for AI Adoption <span class="exam-tag">6 DIMENSIONS</span></div>
+
+<div class="hb">
+<p><strong>3 Common Faculty Responses to AI:</strong></p>
+<p>1. <strong>Resistance:</strong> "AI se academic rigor khatam ho jayega!" — Shift from prevention to design! Assignments design karo jo AI se pura na ho sake.</p>
+<p>2. <strong>Apprehension:</strong> "Students mujhse zyada tools jaante hain!" — You don't need to be AI expert. Your role = pedagogical leadership, not technical mastery!</p>
+<p>3. <strong>Overenthusiasm:</strong> "Har jagah AI use karo!" — Purposeful AI use, not blanket adoption!</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Faculty Self-Readiness Checklist — 6 Dimensions</div><ul>
+<li><strong>1. Mindset Readiness:</strong> AI = support tool, not threat. Open to experimentation, even without perfection.</li>
+<li><strong>2. Awareness Readiness:</strong> Understand GenAI limitations, bias, inaccuracy. Know data privacy importance.</li>
+<li><strong>3. Pedagogical Readiness:</strong> Redesign assignments so thinking matters more than answers. Shift from content delivery to inquiry facilitation.</li>
+<li><strong>4. Assessment Readiness:</strong> Move beyond recall-based assessments. Communicate AI use expectations clearly.</li>
+<li><strong>5. Ethical & Responsible Use Readiness:</strong> Model transparent AI use. Discuss ethics with students. Protect student data.</li>
+<li><strong>6. Institutional & Collaborative Readiness:</strong> Engage in peer learning. See yourself as change agent, not just policy follower.</li>
+</ul></div>
+
+<div class="kp"><div class="kp-ttl">⭐ 4-Step Faculty Adaptation Framework</div><ul>
+<li><strong>Step 1 — Awareness:</strong> Identify one teaching activity where AI could help (NOT exams/grading first)</li>
+<li><strong>Step 2 — Augmentation:</strong> Use AI to generate multiple explanations, different difficulty levels. Faculty = final decision maker</li>
+<li><strong>Step 3 — Redesign:</strong> "Compare your solution with AI-generated one" → builds higher-order thinking</li>
+<li><strong>Step 4 — Reflection:</strong> Add reflective components "How was AI used? Where did human judgment matter?" → responsible AI users</li>
+</ul></div>
+
+<div class="kp"><div class="kp-ttl">⭐ The Nature of Change for Faculty</div><ul>
+<li>Earlier: Faculty = primary source of information | Students depend on lectures</li>
+<li>Today: Information abundant, AI can generate explanations, examples, solutions</li>
+<li>Tomorrow: Faculty value shifts from content delivery → Learning design | Answer giving → Question framing | Evaluation → Judgment, mentoring, ethics</li>
+<li>Faculty relevance increases when focusing on what AI CANNOT do: context, empathy, ethics</li>
+<li>3 dimensions of faculty readiness: Technology Self-Efficacy, Student Interaction guidance, Ethical Awareness</li>
+</ul></div>
+</div>
+
+<hr class="div">
+
+<!-- W4 T5 -->
+<div class="topic" id="w4t5">
+<div class="topic-ttl red">📜 Topic 5: Building an Institutional AI Policy <span class="exam-tag">AI ASSESSMENT SCALE</span></div>
+
+<div class="hb">
+<p>Without AI policy: Students confused, faculty struggle, institution risks inconsistency aur reputational harm!</p>
+<p>With AI policy: Clarity + Consistency + Fairness + Ethical guidance = everyone knows what's acceptable!</p>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ AI Policy Structure — What to Include</div><ul>
+<li>1. Policy Objective — purpose, goals (responsible use, academic integrity, transparency)</li>
+<li>2. Policy Scope — who addressed, when enforced, complementary policies</li>
+<li>3. Definitions — what institution means by GenAI and GenAI tools</li>
+<li>4. AI Assessment Scale (AIAS) — 5-level framework for AI use in assessments</li>
+<li>5. Responsibilities — Faculty, Students/Researchers, Administrators</li>
+<li>6. Academic Honour Code Affirmation</li>
+</ul></div>
+
+<table class="ctbl red">
+<thead><tr><th>Level</th><th>Name</th><th>AI Use Permitted</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Prohibited</strong></td><td>No AI at all</td><td>Handwritten exams, solving circuit problems without AI tools</td></tr>
+<tr><td>2</td><td><strong>Restricted</strong></td><td>AI for ideation/planning only</td><td>Brainstorm water filtration design approaches, then all work independently</td></tr>
+<tr><td>3</td><td><strong>Conditional</strong></td><td>AI for editing/language polish ONLY (not content)</td><td>After writing lab report, use AI to improve grammar/tone — NOT technical content</td></tr>
+<tr><td>4</td><td><strong>Permitted</strong></td><td>AI completes task, but student evaluates output</td><td>Data Science: AI generates datasets; student evaluates validity, bias, ethical implications</td></tr>
+<tr><td>5</td><td><strong>Responsible Autonomy</strong></td><td>Full AI collaboration throughout</td><td>Students work with AI throughout software development lifecycle, demonstrating deep understanding</td></tr>
+</tbody>
+</table>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>AI Assessment Scale (AIAS) developed by <strong>Mike Perkins, Leon Furze, Jasper Roe, Jason MacVaugh</strong> (first introduced 2023, updated 2024)</li>
+<li>AIAS = 5-point scale: Prohibited → Restricted → Conditional → Permitted → Responsible Autonomy</li>
+<li>For any level ABOVE Level 1: students must submit AI prompts + outputs as appendix for transparency</li>
+<li>Faculty responsibility: Decide how GenAI integrates in their course. Communicate clearly. Initiate disciplinary action for violations.</li>
+<li>Student responsibility: Declare AI usage in every submission. Comply with journal/conference AI policies for research.</li>
+<li>"There is no one-size-fits-all policy for AI" — reflect diversity of engineering disciplines</li>
+</ul></div>
+
+<div class="mcq-sec red">
+<div class="mcq-sec-ttl">📝 Topics 4-5 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q6</div><div class="mcq-q">In the AI Assessment Scale (AIAS), Level 3 "Conditional" means:</div><ul class="opts"><li>a) No AI use is permitted</li><li>b) AI can complete the entire task with full autonomy</li><li class="correct">c) AI is used for editing and language polish only — NOT for content generation</li><li>d) AI is used only for brainstorming before the actual work begins</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Level 3 = Conditional. "AI is used for editing and language polish, but not for content." Example: after writing lab report, use AI to improve clarity, grammar — without altering technical content. Level 2 = planning/ideation only. Level 4 = AI completes task, student evaluates.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q7</div><div class="mcq-q">The AI Assessment Scale (AIAS) was introduced in which year?</div><ul class="opts"><li>a) 2019</li><li>b) 2021</li><li class="correct">c) 2023 (updated in 2024)</li><li>d) 2025</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "First introduced in 2023 and updated in Version 2 in 2024." Developed by Mike Perkins, Leon Furze, Jasper Roe, and Jason MacVaugh. Provides framework integrating AI into educational assessments.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q8</div><div class="mcq-q">Which is the CORRECT description of a faculty member's response to student AI use according to the course?</div><ul class="opts"><li>a) Ban all AI use to prevent academic dishonesty</li><li>b) Let students use AI freely without any guidelines</li><li class="correct">c) Shift from prevention to design — create assignments requiring reasoning, reflection, and critical thinking that AI cannot complete alone</li><li>d) Use AI only for administrative tasks, never in assessments</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Instead of banning the use of AI, faculty should design assignments that require reasoning, reflection, critical thinking or local context." Response to "AI will reduce academic rigor" = shift from prevention to design! Ask students to explain HOW they used AI.</p></div></div>
+</div>
+</div>
+
+<hr class="div">
+
+<!-- W4 T6 -->
+<div class="topic" id="w4t6">
+<div class="topic-ttl red">🔬 Topic 6: Research Ethics in the AI Era <span class="exam-tag">TOOLS + PRINCIPLES</span></div>
+
+<div class="hb">
+<p>AI tools jaise ChatGPT, Gemini, Copilot ne research writing ko reshape kar diya hai. Lekin ethics form karta hai research ka foundation — integrity remain timeless!</p>
+</div>
+
+<div class="tool-grid">
+<div class="tool-card red"><span class="emoji">🚫</span><h4>Common Ethical Issues</h4><ul><li>Plagiarism & self-plagiarism</li><li>Data fabrication or manipulation</li><li>Gift or ghost authorship</li><li>Improper citations & salami slicing</li><li>Duplicate or simultaneous submissions</li></ul></div>
+<div class="tool-card orange"><span class="emoji">✅</span><h4>Core Ethical Principles</h4><ul><li><strong>Honesty</strong> — no falsification</li><li><strong>Transparency</strong> — disclose methods, sources</li><li><strong>Acknowledgment</strong> — cite properly</li><li><strong>Confidentiality</strong> — respect peer review</li><li><strong>Accountability</strong> — take responsibility</li></ul></div>
+<div class="tool-card purple"><span class="emoji">🤖</span><h4>AI Detection Tools</h4><ul><li>GPTZero — AI vs human writing</li><li>Turnitin AI Detector — academic systems</li><li>Copyleaks AI Content Detector — hybrid text</li><li>Content at Scale Detector — AI paraphrasing</li></ul></div>
+<div class="tool-card teal"><span class="emoji">📋</span><h4>Plagiarism Tools</h4><ul><li>Turnitin — academic standard</li><li>iThenticate — journals/publishers</li><li>Grammarly Premium — includes plagiarism check</li><li>PlagScan / URKUND / Quetext</li><li>✅ Maintain &lt;15% similarity</li></ul></div>
+</div>
+
+<div class="kp"><div class="kp-ttl">⭐ Key Points — Exam ke liye!</div><ul>
+<li>Acceptable AI use in research: grammar improvement, idea brainstorming, summarization, keyword/title suggestions</li>
+<li>UNETHICAL AI use: full paper generation, citing fake AI-generated references, submitting AI-written text as original</li>
+<li>Similarity index = <strong>maintain &lt;15%</strong> as per most journal policies</li>
+<li>COPE guidelines = Committee on Publication Ethics (for ethical publishing)</li>
+<li>ICMJE guidelines = authorship roles in research publications</li>
+<li>"Ghost authorship" = someone who contributed but not listed | "Gift authorship" = someone listed but didn't contribute</li>
+<li>"Salami slicing" = splitting one research paper into multiple smaller papers for multiple publications</li>
+<li>GPTZero = detects AI vs human writing</li>
+</ul></div>
+
+<div class="mcq-sec red">
+<div class="mcq-sec-ttl">📝 Topic 6 MCQs</div>
+<div class="mcq-item"><div class="mcq-n">Q9</div><div class="mcq-q">"Salami slicing" in research refers to:</div><ul class="opts"><li>a) Dividing research datasets into training and testing portions</li><li>b) Cutting plagiarised text into smaller pieces to avoid detection</li><li class="correct">c) Splitting one research study into multiple smaller papers to get multiple publications</li><li>d) Summarizing a large research paper into sections</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Salami slicing = one research ke data/findings ko multiple papers mein distribute karna taaki publications count badhe. Yeh unethical practice hai. Course mein "Common Ethical Issues" mein mentioned: "Salami slicing" alongside plagiarism, data fabrication, ghost authorship.</p></div></div>
+<div class="mcq-item"><div class="mcq-n">Q10</div><div class="mcq-q">Which AI detection tool is described as "integrated into academic systems" for detecting AI-generated writing?</div><ul class="opts"><li>a) GPTZero</li><li class="correct">b) Turnitin AI Detector</li><li>c) Copyleaks AI Content Detector</li><li>d) Content at Scale Detector</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Course: "Turnitin AI Detector – integrated into academic systems." GPTZero = detects AI vs human writing. Copyleaks = high accuracy for hybrid text. Content at Scale Detector = identifies AI paraphrasing.</p></div></div>
+</div>
+</div>
+
+<!-- W4 CHAPTER TEST -->
+<div class="ch-test red" id="w4test">
+<div class="test-hdr">🏆 Week 4 — Chapter Test (12 MCQs)</div>
+<div class="test-sub">Ethics, Data Protection, AI Policy — final exam preparation!</div>
+
+<div class="mcq-item"><div class="mcq-n">T1</div><div class="mcq-q">An institute that processes student admission data and decides HOW it will be used is called a:</div><ul class="opts"><li>a) Data Principal</li><li class="correct">b) Data Fiduciary</li><li>c) Data Controller (International term, not DPDP)</li><li>d) Data Processor</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Data Fiduciary = entity that decides purpose + means of processing someone's personal data. "Institutions that process student and staff data are data fiduciaries." They have primary responsibility for lawful, fair, secure handling.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T2</div><div class="mcq-q">Which GenAI ethical concern involves the inability to remove someone's personal data from an AI model after it has been trained?</div><ul class="opts"><li>a) Content Pollution</li><li>b) Deepfakes and Malpractice</li><li class="correct">c) Lack of Consent (violating "right to be forgotten")</li><li>d) Bias</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "It is currently impossible to remove someone's data from a GPT model once it has been trained, contravening principles like the right to be forgotten." This falls under Lack of Consent concern — data scraped without permission + can't be removed.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T3</div><div class="mcq-q">In the DPIA, what does Step 7 "Sign-off" involve?</div><ul class="opts"><li>a) Listing all types of data collected</li><li>b) Identifying potential privacy risks</li><li>c) Documenting data flow paths</li><li class="correct">d) DPIA Owner and an authorized officer signing with dates for accountability</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d)</div><p>Course: "The DPIA should finally Sign-off with the DPIA Owner and some authorized officer with dates." This ensures accountability — someone is formally responsible for the data protection decisions.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T4</div><div class="mcq-q">The 4-Step Faculty Adaptation Framework starts with which step?</div><ul class="opts"><li>a) Redesign — rethink assignments immediately</li><li b>b) Reflection — build AI literacy in students</li><li class="correct">c) Awareness — identify one teaching activity where AI could help (NOT exams or grading first)</li><li>d) Augmentation — use AI as support tool everywhere</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Step 1: Awareness – Identify one teaching activity where AI could help. It could be lesson planning, generation of examples, creating practice problems. It is suggested to NOT start with conducting exams or grading." Start small, stay reflective!</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T5</div><div class="mcq-q">Level 5 "Responsible Autonomy" in the AI Assessment Scale means:</div><ul class="opts"><li>a) Absolutely no AI use whatsoever</li><li>b) AI for brainstorming only, all work done independently</li><li>c) AI for language improvement only</li><li class="correct">d) Full AI collaboration throughout the work — students demonstrate deep understanding and ownership of all outcomes</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (d)</div><p>Level 5 = "AI acts as a collaborator." Full access. Example: students work with GenAI throughout software development lifecycle (requirements, design, coding, testing) while demonstrating deep understanding and ownership. Highest level of AI integration.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T6</div><div class="mcq-q">The "explainability" concern in GenAI ethics refers to:</div><ul class="opts"><li>a) AI systems that cannot explain instructions to students</li><li class="correct">b) GenAI models function as "black boxes" — inner workings are opaque, perpetuating bias and eroding user trust</li><li>c) AI tools that cannot generate simplified explanations of complex text</li><li>d) Students failing to explain how they used AI in assignments</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Explainability concern: "GenAI models often function as 'black boxes,' making their inner workings opaque. This opacity perpetuates biases inherited from the training data and erodes user trust, as it is difficult to ascertain how a specific output was determined."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T7</div><div class="mcq-q">What acceptable similarity index should researchers maintain according to most journal policies?</div><ul class="opts"><li>a) Less than 5%</li><li>b) Less than 30%</li><li class="correct">c) Less than 15%</li><li>d) Less than 25%</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "Maintain &lt;15% similarity index as per most journal policies." This applies to plagiarism checks using Turnitin, iThenticate, etc. Above 15% = typically triggers concern for most journals.</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T8</div><div class="mcq-q">Which document proves institutional accountability and ensures responsible AI data use for a specific project?</div><ul class="opts"><li>a) Data Inventory only</li><li>b) Academic Honour Code</li><li class="correct">c) DPIA (Data Protection Impact Assessment)</li><li>d) DPDP Act Certificate</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>DPIA examines potential risks when data is used in a specific system/project, especially AI-based ones. "Data inventory provides visibility; DPIA provides judgment, ensuring innovation is balanced with privacy, ethics, and legal responsibility."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T9</div><div class="mcq-q">Which of the following is ACCEPTABLE use of AI in research writing?</div><ul class="opts"><li>a) Generating an entire research paper from AI</li><li>b) Submitting AI-written text as original research</li><li class="correct">c) Using AI for grammar correction, structure improvement, and idea brainstorming</li><li>d) Citing AI-generated hallucinated references in the paper</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Acceptable: grammar/structure/clarity improvement, idea brainstorming, summarization, keyword/title suggestions. UNETHICAL: full paper generation, citing fake references, submitting AI text as original work. "AI should assist, not replace human intellect and authorship."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T10</div><div class="mcq-q">How should faculty redesign assignments to prevent AI from simply completing them, according to the course?</div><ul class="opts"><li>a) Ban all digital devices during assignments</li><li>b) Make assignments longer and more complex</li><li class="correct">c) Design tasks requiring reasoning, reflection, local context, and critical thinking that AI alone cannot complete</li><li>d) Only use oral examinations</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: Faculty should "design assignments that require reasoning, reflection, critical thinking or local context." Also: ask students to explain how they used AI. Redesigned example: "Compare your solution with AI-generated one" + "Identify errors made by AI" + "Improve AI solution for real-world constraints."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T11</div><div class="mcq-q">"Ghost authorship" in research refers to:</div><ul class="opts"><li>a) Publishing research anonymously</li><li class="correct">b) Someone who contributed significantly to the research but is NOT listed as an author</li><li>c) Someone listed as author who made no real contribution</li><li>d) Publishing research after the author's death</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (b)</div><p>Ghost authorship = contributed significantly but NOT listed. "Gift authorship" = listed but did NOT contribute. Both are unethical per ICMJE guidelines. "Define contributions clearly among co-authors" + "Avoid gift or ghost authorships."</p></div></div>
+
+<div class="mcq-item"><div class="mcq-n">T12</div><div class="mcq-q">The IndiaAI Mission and its governance guidelines, launched in November 2025, emphasize which values?</div><ul class="opts"><li>a) Maximum AI adoption speed over safety</li><li b>b) Commercial AI deployment for economic growth only</li><li class="correct">c) Accountability, transparency, data privacy, and human-centric AI with an AI Safety Institute</li><li>d) Minimal regulation to encourage AI innovation</li></ul><button class="reveal-btn" onclick="reveal(this)">Show Explanation</button><div class="mcq-ans"><div class="ans-lbl">✅ Correct: (c)</div><p>Course: "IndiaAI Mission and its governance guidelines, launched in November 2025, underscore a national commitment to responsible and human-centric AI. These guidelines emphasize accountability, transparency, data privacy, and the establishment of an AI Safety Institute."</p></div></div>
+</div>
+
+<!-- WEEK 4 SUMMARY -->
+<div class="ch-sum red">
+<div class="sum-ttl">📋 Week 4 — Quick Revision</div>
+<div class="sum-grid">
+<div class="sum-card"><strong>DPDP Act 2023</strong>India's Digital Personal Data Protection Act. Rules notified November 2025.</div>
+<div class="sum-card"><strong>Data Principal</strong>Data ka owner (student/staff). Rights: correction, erasure, grievance. NOT passive subject!</div>
+<div class="sum-card"><strong>Data Fiduciary</strong>Entity deciding purpose+means of data processing. Institutions = fiduciaries.</div>
+<div class="sum-card"><strong>DPIA — 7 Steps</strong>Basic Info → Purpose → Categories → Data Subjects → Data Flows → Risk ID → Sign-off</div>
+<div class="sum-card"><strong>8 GenAI Ethical Risks</strong>Digital Poverty, Regulation, Consent, Explainability (Black Box), Bias, AI Slop, Marginalization, Deepfakes</div>
+<div class="sum-card"><strong>AI Slop</strong>Low-quality AI-generated content showing lack of effort/quality, flooding the internet.</div>
+<div class="sum-card"><strong>AIAS — 5 Levels</strong>Prohibited → Restricted → Conditional → Permitted → Responsible Autonomy</div>
+<div class="sum-card"><strong>Faculty 3 Responses</strong>Resistance, Apprehension, Overenthusiasm. Correct = purposeful, reflective adoption.</div>
+<div class="sum-card"><strong>4-Step Framework</strong>Awareness → Augmentation → Redesign → Reflection</div>
+<div class="sum-card"><strong>Faculty Shifts</strong>Content delivery → Learning design | Answer giving → Question framing | Evaluation → Judgment</div>
+<div class="sum-card"><strong>Research Ethics</strong>Salami slicing, ghost/gift authorship, plagiarism &lt;15%. COPE + ICMJE guidelines.</div>
+<div class="sum-card"><strong>AI Detection Tools</strong>GPTZero, Turnitin AI Detector, Copyleaks, Content at Scale Detector</div>
+</div>
+</div>
+</div>
+
+<!-- FINAL FOOTER -->
+<div class="note" style="margin-top:40px;text-align:center;padding:20px;">
+  <strong>🎓 Complete Guide — All Weeks Covered!</strong><br>
+  Week 1: AI Fundamentals | Week 2: AI in Education & Pedagogy | Week 3: Open Source Tools | Week 4: Ethics & Policy<br>
+  <span style="color:var(--muted);font-size:.85rem;">NITTTR Chandigarh | M. Dutta & M. Sood | SWAYAM Course</span>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+function reveal(btn) {
+  btn.closest('.mcq-item').classList.add('revealed');
+}
+
+// Sticky nav highlight on scroll
+const sections = ['week1','week2','week3','week4'];
+const navLinks = ['nav-w1','nav-w2','nav-w3','nav-w4'];
+function updateNav() {
+  let current = 'week1';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  navLinks.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', sections[i] === current);
+  });
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+</script>
+</body>
+</html>
